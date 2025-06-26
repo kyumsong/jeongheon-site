@@ -4441,3 +4441,25 @@ td:last-child {
         right: -2rem;
     }
 }
+
+.menu-link {
+    position: relative;
+    color: #b7410e;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.menu-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0%;
+    height: 2px;
+    background-color: #b7410e;
+    transition: width 0.3s ease;
+}
+
+.menu-link:hover::after {
+    width: 100%;
+}
