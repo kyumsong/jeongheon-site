@@ -62,7 +62,7 @@ const Navbar = () => {
           </li>
         ) : null}
 
-        <li className='nav__list-item'>
+        {/* <li className='nav__list-item'>
           <button
             type="button"
             className='link link--nav'
@@ -71,7 +71,7 @@ const Navbar = () => {
           >
             글모음
           </button>
-        </li>
+        </li> */}
 
         <li className='nav__list-item'>
           <button

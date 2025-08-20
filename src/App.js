@@ -5,7 +5,7 @@ import Header from './components/Header/Header'
 import About from './components/About/About'
 import Projects from './components/Projects/Projects'
 import Skills from './components/Skills/Skills'
-import Posts from './components/Posts/Posts'
+// import Posts from './components/Posts/Posts'
 import Sermons from './components/Sermons/Sermons'
 import ScrollToTop from './components/ScrollToTop/ScrollToTop'
 import Contact from './components/Contact/Contact'
@@ -28,7 +28,7 @@ const App = () => {
               <div className="side-by-side-container">
                 <Projects />
                 <Skills />
-                <Posts />
+                {/* <Posts /> */}
                 <Sermons />
               </div>
               <Contact />
