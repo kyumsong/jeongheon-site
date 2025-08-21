@@ -16,7 +16,7 @@
           id="name"
           name="name"
           class="w-full px-4 py-3 rounded-xl bg-white/50 border border-apple-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-colors"
-          placeholder="Your name"
+          placeholder="이름을 입력하세요"
         />
       </div>
       
@@ -42,13 +42,13 @@
           name="message"
           rows="4"
           class="w-full px-4 py-3 rounded-xl bg-white/50 border border-apple-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-colors resize-none"
-          placeholder="Your message..."
+          placeholder="메세지를 입력하세요..."
         ></textarea>
       </div>
       
       <button
         type="button"
-        onclick="sendEmail()"
+        id="sendButton"
         class="w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white font-medium px-6 py-3 rounded-xl hover:from-blue-700 hover:to-blue-800 transition-all duration-200 shadow-lg hover:shadow-xl"
       >
         보내기
@@ -78,14 +78,27 @@
 </section>
 
 <script>
-  function sendEmail() {
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const message = document.getElementById('message').value;
+  document.addEventListener('DOMContentLoaded', function() {
+    const sendButton = document.getElementById('sendButton');
     
-    const subject = `웹사이트 문의 from ${name}`;
-    const body = `이름: ${name}\n이메일: ${email}\n\n메시지:\n${message}`;
-    
-    window.location.href = `mailto:sjhdavid@naver.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-  }
+    if (sendButton) {
+      sendButton.addEventListener('click', function() {
+        const name = document.getElementById('name')?.value || '';
+        const email = document.getElementById('email')?.value || '';
+        const message = document.getElementById('message')?.value || '';
+        
+        if (!name || !email || !message) {
+          alert('모든 필드를 입력해주세요.');
+          return;
+        }
+        
+        const subject = `웹사이트 문의 from ${name}`;
+        const body = `이름: ${name}\n이메일: ${email}\n\n메시지:\n${message}`;
+        
+        const mailtoLink = `mailto:sjhdavid@naver.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        
+        window.location.href = mailtoLink;
+      });
+    }
+  });
 </script>
