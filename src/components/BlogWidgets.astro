@@ -1,0 +1,71 @@
+---
+interface BlogPost {
+  title: string;
+  excerpt: string;
+  date: string;
+  readTime: string;
+  category: string;
+}
+
+const recentPosts: BlogPost[] = [
+  {
+    title: "마태복음에서 팔복을 해석하다",
+    excerpt: "",
+    date: "2024-10-24",
+    readTime: "5 min",
+    category: "마태복음 16:16-19",
+    youtubeUrl: "https://www.youtube.com/watch?v=NX4t3tH9iuo"
+  },
+  {
+    title: "레위기에서 거룩을 배우다",
+    excerpt: "",
+    date: "2024-10-22",
+    readTime: "4 min",
+    category: "레위기 11:45",
+    youtubeUrl: "https://www.youtube.com/watch?v=fviRtssOEtY&t=2s"
+  }
+];
+---
+
+<div class="bg-white/80 backdrop-blur-lg rounded-3xl p-6 shadow-xl">
+<div class="md:flex justify-between items-center mb-6">
+  <h3 class="text-2xl font-semibold text-blue-900">설교</h3>
+  <a
+    href="https://youtube.com/@pastor.song-f3h?si=655PcG6fYFoVQdB_"  // <-- replace with your channel
+    target="_blank"   // opens in a new tab
+    rel="noopener noreferrer"
+    class="text-blue-600 hover:text-blue-800 transition-colors text-sm"
+  >
+    설교 더보기 →
+  </a>
+</div>
+  <div class="space-y-6">
+  {recentPosts.map((post) => (
+  <article class="group">
+    <a
+      href={post.youtubeUrl}          // <-- YouTube 링크 사용
+      target="_blank"                 // 새 탭에서 열기
+      rel="noopener noreferrer"
+      class="block p-4 rounded-2xl hover:bg-blue-50/50 transition-all duration-300"
+    >
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-2">
+        <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-xs font-medium w-fit">
+          {post.category}
+        </span>
+        <div class="flex items-center gap-2 text-blue-400 text-sm">
+          <span>{post.date}</span>
+          <span>•</span>
+          <span>{post.readTime} read</span>
+        </div>
+      </div>
+      <h4 class="text-lg font-medium text-blue-900 mb-2 group-hover:text-blue-600 transition-colors">
+        {post.title}
+      </h4>
+      <p class="text-blue-600/80 text-sm line-clamp-2">
+        {post.excerpt}
+      </p>
+    </a>
+  </article>
+))}
+  </div>
+</div>

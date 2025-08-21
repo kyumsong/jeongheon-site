@@ -1,54 +1,35 @@
 {
-  "name": "cleanfolio",
-  "version": "0.1.0",
+  "name": "apple-style-portfolio",
+  "type": "module",
+  "version": "0.0.1",
   "private": true,
-  "homepage": "https://www.송정헌목사.한국",
-  "dependencies": {
-    "@material-ui/core": "^4.12.3",
-    "@material-ui/icons": "^4.11.2",
-    "@testing-library/jest-dom": "^5.14.1",
-    "@testing-library/react": "^12.0.0",
-    "@testing-library/user-event": "^13.2.1",
-    "gh-pages": "^3.2.3",
-    "prop-types": "^15.7.2",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-router-dom": "^5.3.4",
-    "react-scripts": "4.0.3",
-    "uniqid": "^5.4.0",
-    "web-vitals": "^2.1.0"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/larry-xue/apple-style-portfolio"
   },
+  "author": {
+    "name": "Yujian Xue",
+    "email": "azoux0311@gmail.com"
+  },
+  "license": "MIT",
   "scripts": {
-    "start": "react-scripts start --openssl-legacy-provider",
-    "build": "react-scripts build --openssl-legacy-provider",
-    "test": "react-scripts test --openssl-legacy-provider",
-    "eject": "react-scripts eject --openssl-legacy-provider",
-    "lint": "eslint .",
-    "format": "prettier --write \"**/*.+(js|jsx|json|css|md)\"",
-    "predeploy": "NODE_OPTIONS=--openssl-legacy-provider npm run build",
-    "deploy": "gh-pages -d build"
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro build && astro preview",
+    "astro": "astro"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "devDependencies": {
-    "eslint": "^7.32.0",
-    "eslint-config-airbnb": "18.2.1",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-import": "^2.24.2",
-    "eslint-plugin-jsx-a11y": "^6.4.1",
-    "eslint-plugin-prettier": "^4.0.0",
-    "eslint-plugin-react": "^7.25.1",
-    "eslint-plugin-react-hooks": "^4.2.0",
-    "prettier": "^2.3.2"
+  "dependencies": {
+    "@astrojs/react": "^3.0.10",
+    "@astrojs/tailwind": "^5.1.0",
+    "@fontsource-variable/inter": "^5.0.16",
+    "@fontsource/source-sans-pro": "^5.1.0",
+    "@types/three": "^0.161.2",
+    "astro": "^5.13.2",
+    "gsap": "^3.12.5",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "tailwindcss": "^3.4.1",
+    "three": "^0.161.0"
   }
 }
