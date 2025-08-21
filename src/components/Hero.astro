@@ -13,4 +13,45 @@ import Scene3D from './Scene3D';
       </div>
     </div>
   </div>
+
+  <!-- Scroll Down Arrow -->
+  <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20">
+    <button 
+      onclick="window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })"
+      class="group flex flex-col items-center cursor-pointer transition-all duration-300 hover:scale-110"
+      aria-label="Scroll down"
+    >
+      <span class="text-sm text-apple-gray-400 mb-2 group-hover:text-apple-gray-600 transition-colors">
+        스크롤
+      </span>
+      <div class="w-6 h-10 border-2 border-apple-gray-300 rounded-full group-hover:border-apple-gray-500 transition-colors relative">
+        <div class="w-1 h-3 bg-apple-gray-300 rounded-full absolute top-2 left-1/2 transform -translate-x-1/2 group-hover:bg-apple-gray-500 transition-colors animate-bounce"></div>
+      </div>
+      <svg 
+        class="w-6 h-6 text-apple-gray-300 mt-2 group-hover:text-apple-gray-500 transition-colors animate-bounce" 
+        fill="none" 
+        stroke="currentColor" 
+        viewBox="0 0 24 24"
+      >
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+      </svg>
+    </button>
+  </div>
 </section>
+
+<style>
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-fade-in {
+    animation: fade-in 1s ease-out;
+  }
+</style>
