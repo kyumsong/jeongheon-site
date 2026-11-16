@@ -17,7 +17,8 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro build && astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "pages": "node scripts/build-pages.mjs"
   },
   "dependencies": {
     "@astrojs/react": "^3.0.10",
