@@ -202,6 +202,20 @@ footer a{color:#fff}
 .toc summary i{font-style:normal;color:var(--gold);font-weight:700;margin-right:6px}
 .toc ul{margin:6px 0 4px;padding-left:22px;font-size:14px;color:#55524b;line-height:1.65}
 
+
+/* 목록(허브)·경로 */
+.crumbbar{background:#fff;border-bottom:1px solid var(--line);font-size:14px;color:var(--mute)}
+.crumbbar .wrap{padding-top:10px;padding-bottom:10px}
+.crumbbar a{color:var(--navy);text-decoration:none}.crumbbar i{font-style:normal;margin:0 6px;color:var(--gold)}
+.crumbbar span{color:var(--ink);font-weight:600}
+.hub{display:grid;gap:14px;max-width:820px}
+.hubcard{display:grid;grid-template-columns:96px 1fr 28px;align-items:center;gap:16px;text-decoration:none;background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:22px 24px;transition:transform .15s,box-shadow .15s}
+.hubcard:hover{transform:translateX(4px);box-shadow:0 8px 22px rgba(44,69,104,.12)}
+.hubcard .n{font-size:14px;font-weight:700;color:var(--gold);letter-spacing:.04em}
+.hubcard b{display:block;font-family:'Noto Serif KR',serif;font-size:22px;color:var(--navy)}
+.hubcard .tx>span{display:block;font-size:15.5px;color:#55524b;margin-top:2px}
+.hubcard i{font-style:normal;color:var(--gold);font-size:22px}
+@media (max-width:640px){.hubcard{grid-template-columns:1fr 20px;padding:18px}.hubcard .n{grid-column:1/3}}
 /* 인트로 */
 .intro{min-height:100vh;background:radial-gradient(1200px 600px at 70% 20%,#34507a 0%,var(--navy) 45%,var(--navy-d) 100%);color:#fff;display:flex;align-items:center;padding:40px 0}
 .intro .who{font-size:14.5px;color:#d9cfb9;letter-spacing:.04em;margin-bottom:28px}
@@ -267,7 +281,7 @@ function head({ title, desc, path, image = '/og-vol080.jpg' }) {
 const nav = (home) => `
 <header class="top"><div class="wrap"><nav>
   <a class="brand" href="${home}">송정헌 목사</a>
-  <span class="links"><a class="q" href="${home}why/">왜</a><a class="q" href="${home}what/">무엇을</a><a class="q" href="${home}how/">어떻게</a><a href="${home}vol080/">새 책</a><a href="${home}about/">소개</a><a href="${home}about/#support">후원</a></span>
+  <span class="links"><a class="q" href="${home}why/">왜</a><a class="q" href="${home}what/">무엇을</a><a class="q" href="${home}how/">어떻게</a><a href="${home}vol080/">새 책</a><a href="${home}about/">소개</a><a href="${home}about/support/">후원</a></span>
 </nav></div></header>`;
 
 const footer = `
@@ -338,18 +352,18 @@ const partPage = (H, title, desc, path, body) => head({ title, desc, path }) + n
 const nextBtn = (href, q, t) => `<a href="${href}" style="display:block;text-decoration:none;background:var(--navy);color:#fff;border-radius:14px;padding:18px 22px;min-width:260px"><span style="font-size:13px;color:var(--gold);letter-spacing:.12em">다음</span><b style="display:block;font-family:'Noto Serif KR',serif;font-size:22px;color:var(--gold-l)">${q}</b><span style="font-size:15px">${t} →</span></a>`;
 const prevBtn = (href, q, t) => `<a href="${href}" style="display:block;text-decoration:none;border:1.5px solid var(--navy);color:var(--navy);border-radius:14px;padding:18px 22px;min-width:220px"><span style="font-size:13px;color:var(--mute);letter-spacing:.12em">이전</span><b style="display:block;font-family:'Noto Serif KR',serif;font-size:22px">${q}</b><span style="font-size:15px">← ${t}</span></a>`;
 
-function whyPage() {
-  const H = '../';
-  return partPage(H, `왜 양육해야 하는가 | ${VOL80}`, `교회는 왜 양육해야 하는가 — 교회를 향한 하나님의 마음과 성도를 향한 하나님의 마음. 『${VOL80}』 제1부.`, '/why/', `
-<!-- ===================== 제1부 왜 ===================== -->
-<div class="parthead" id="why"><div class="wrap">
+
+// ---------- 왜·무엇을·어떻게·소개: 목록(허브) 페이지와 각 장 페이지 ----------
+const crumb = (H, items) => `<div class="crumbbar"><div class="wrap"><a href="${H}">처음</a>${items.map(([t, h]) => h ? ` <i>›</i> <a href="${h}">${t}</a>` : ` <i>›</i> <span>${t}</span>`).join('')}</div></div>`;
+const PARTS = [];
+
+PARTS.push({ id: 'why', q: '왜', qt: '교회는 왜 양육해야 하는가', head: (H) => `<div class="parthead" id="why"><div class="wrap">
   <div class="q">왜</div>
   <h2>교회는 왜 양육해야 하는가</h2>
   <p>양육은 교회가 해도 되고 안 해도 되는 프로그램이 아니라, 교회가 교회이기 위해 반드시 해야 하는 일입니다. 이 책은 그 근거를 두 자리에서 찾습니다. 교회를 향한 하나님의 마음과 성도 한 사람을 향한 하나님의 마음입니다.</p>
   <span class="ch">제1부 · 1–6장</span>
-</div></div>
-
-<section class="blk"><div class="wrap">
+</div></div>`, leaves: [
+  { slug: 'church', ch: '1–4장', t: '교회의 세 얼굴', one: '부름받은 백성, 보냄받은 증인, 제자로 훈련하는 공동체', html: (H) => `<section class="blk"><div class="wrap">
   <div class="eyebrow">1–4장 · 교회를 향한 하나님의 마음</div>
   <h3 class="t">교회의 세 얼굴</h3>
   <p class="lead">양육이 왜 필요한지는 교회 프로그램에서가 아니라 교회론에서 찾아야 합니다. 교회가 무엇인지에 따라 교회가 무엇을 해야 하는지가 정해지기 때문입니다. 그리고 교회에는 세 가지 얼굴이 있습니다.</p>
@@ -359,9 +373,8 @@ function whyPage() {
     <div class="card face f3"><div class="k">교회의 일 · 4장</div><h4>하나님의 백성을 그리스도의<br>제자로 훈련하는 공동체</h4><p>증인이 되려면 제자로 훈련받고 성령의 다스림을 받아야 합니다. 그래서 교회는 성도를 제자로 훈련합니다.</p></div>
   </div>
   <div class="bridge">다시 말해, 부름받은 백성이 보냄받은 증인이 되려면 그 사이를 잇는 훈련이 반드시 있어야 합니다. 교회론을 바르게 이해하면 양육은 교회의 선택 사항이 아니라 교회의 본질이 됩니다.</div>
-</div></section>
-
-<section class="blk alt"><div class="wrap">
+</div></section>` },
+  { slug: 'believer', ch: '5장', t: '성도를 향한 하나님의 마음', one: '태어난 것에 머물지 않고 자라는 것', html: (H) => `<section class="blk alt"><div class="wrap">
   <div class="eyebrow">5장 · 성도를 향한 하나님의 마음</div>
   <h3 class="t">태어난 것에 머물지 않고 자라는 것</h3>
   <p class="lead">그런데 양육의 근거는 교회론에만 있지 않습니다. 하나님은 교회 전체를 향해서뿐 아니라, 그 교회를 이루는 성도 한 사람 한 사람을 향해서도 마음을 품고 계십니다. 갓난아기가 젖을 먹고 자라야 하듯이, 믿음으로 거듭난 것은 신앙의 끝이 아니라 시작입니다(벧전 2:2).</p>
@@ -371,9 +384,8 @@ function whyPage() {
     <li>그리스도를 닮아 가는 성도가 <b>세상 속에서 그리스도의 제자요 증인</b>이 됩니다.</li>
   </ol>
   <div class="bridge">그러나 오늘날 한국 교회에는 태어나기만 하고 자라지 않은 그리스도인이 많습니다. 성도가 자라지 않으면 교회는 세상에서 그리스도를 보여 주지 못합니다. 다시 말해, 성도 한 사람이 자라기를 원하시는 하나님의 마음과 교회를 세상으로 보내시려는 하나님의 마음은 결국 하나의 마음입니다.</div>
-</div></section>
-
-<section class="blk"><div class="wrap">
+</div></section>` },
+  { slug: 'training', ch: '6장', t: '어떻게 훈련할 것인가', one: '설교의 한계를 넘어 소수의 모임과 읽기형 교재로', html: (H) => `<section class="blk"><div class="wrap">
   <div class="eyebrow">6장 · 어떻게 훈련할 것인가</div>
   <h3 class="t">설교에서 소그룹으로, 소그룹에서 삶으로</h3>
   <p class="lead">훈련은 프로그램이 아니라 삶 전체에서 일어나며, 우리를 훈련하시는 분은 성령님이십니다. 그래서 설교가 중요합니다. 그러나 설교만으로는 한 사람 한 사람의 삶을 다루기 어렵습니다. 이 한계를 넘으려면 다음이 필요합니다.</p>
@@ -383,17 +395,32 @@ function whyPage() {
     <div class="card"><div class="k">교회의 일정</div><h4>양육을 위한 시간</h4><p>공예배 중심의 일정에는 양육할 시간이 없습니다. 양육이 본질이라면 교회의 일정이 그에 맞게 바뀌어야 합니다.</p></div>
   </div>
   <div class="bridge">그래서 교회는 삶에서 훈련이 일어나도록 <b>최소한의 양육 시스템</b>을 갖추어야 합니다. 그렇다면 무엇을, 어떤 순서로 양육해야 할까요?</div>
-</div></section>
-
-` + `
-<section class="blk"><div class="wrap"><div class="pager" style="margin:0">
-  ${prevBtn(H, '처음으로', '책 소개 첫 화면')}
-  ${nextBtn(H + 'what/', '무엇을', '무엇을, 어떤 순서로 양육할 것인가')}
-</div></div></section>`);
-}
-
-function whatPage() {
-  const H = '../';
+</div></section>` },
+]});
+PARTS.push({ id: 'what', q: '무엇을', qt: '무엇을, 어떤 순서로 양육할 것인가', head: (H) => `<div class="parthead" id="what"><div class="wrap">
+  <div class="q">무엇을</div>
+  <h2>무엇을, 어떤 순서로 양육할 것인가</h2>
+  <p>예수님은 “내가 너희에게 분부한 모든 것을 가르쳐 지키게 하라”(마 28:20)고 하셨습니다. 그 ‘모든 것’ 안에는 적어도 세 영역이 있습니다. 그리고 그 세 영역이 성장 청사진과 양육 로드맵이 됩니다.</p>
+  <span class="ch">제2부 · 7–14장</span>
+</div></div>`, leaves: [
+  { slug: 'nurture', ch: '7장', t: '양육이란 무엇인가', one: '분부하신 모든 것의 세 영역: 만남·성장·재생산', html: (H) => `<section class="blk"><div class="wrap">
+  <div class="eyebrow">7장 · 양육이란 무엇인가</div>
+  <h3 class="t">분부하신 모든 것의 세 영역</h3>
+  <p class="lead">예수님께서 제자들에게 하신 것이 양육입니다. 그리고 그 내용은 예수님께서 분부하신 모든 것입니다. 제자가 되는 데서 그치지 않고 제자를 삼는 것까지가 그 안에 들어 있습니다.</p>
+  <div class="areas">
+    <div class="area e"><b>그리스도와의 만남</b><span>Encounter</span><small>새가족 과정</small></div>
+    <div class="area g"><b>그리스도 안에서의 성장</b><span>Growth</span><small>기초 과정 · 중급 과정</small></div>
+    <div class="area r"><b>제자를 삼는 재생산</b><span>Reproduction</span><small>고급 과정</small></div>
+  </div>
+</div></section>` },
+  { slug: 'blueprint', ch: '8장', t: '성장 청사진', one: '양육으로 지어져 가는 사람 — 누르면 설명이 열리는 그림', html: (H) => `<section class="blk alt" id="blueprint"><div class="wrap">
+  <div class="eyebrow">8장 · 페이스빌더 성장 청사진</div>
+  <h3 class="t">양육으로 지어져 가는 사람</h3>
+  <p class="lead">양육의 목표는 그리스도와의 연합, 그리스도와의 동행, 그리스도의 형상이라는 세 단어로 정리됩니다. 그렇다면 그렇게 자라 가는 사람은 어떤 사람이 되며, 무엇을 위해 살아갈까요? 그 답을 교회론과 겹쳐 한 장의 그림으로 그린 것이 성장 청사진입니다.</p>
+  ${blueprint(H)}
+  <div class="bridge">다시 말해, 성장 청사진은 교회의 세 얼굴이 성도 한 사람 안에서 이루어져 가는 모습입니다. 그리스도인은 부름받은 하나님의 백성의 한 사람이고, 제자와 증인은 교회가 훈련하고 보내는 그 사람의 모습입니다. 그렇다면 교회는 이 사람을 어떤 길로 세워 갈까요? 그 길이 양육 로드맵입니다.</div>
+</div></section>` },
+  { slug: 'roadmap', ch: '9–14장', t: '양육 로드맵', one: '네 과정 · 21개 시리즈 · 79권, 과정마다 책별 목차', html: (H) => {
   const courseCards = courses.map((c) => {
     const chips = c.parts.flatMap((p) => p.series).map((s) => `<span class="chip">${esc(s.name.replace(/^[①-⑦]\s*/, ''))}</span>`).join('');
     return `<a class="course" href="${H}roadmap/${c.id}/">
@@ -403,35 +430,7 @@ function whatPage() {
       <div class="chips">${chips}</div>
       <div class="go" style="color:${c.color};margin-top:10px">과정과 목차 보기 →</div></div></a>`;
   }).join('\n');
-  return partPage(H, `무엇을 양육할 것인가 | ${VOL80}`, `분부하신 모든 것의 세 영역, 성장 청사진, 네 과정 79권의 양육 로드맵. 『${VOL80}』 제2부.`, '/what/', `
-<!-- ===================== 제2부 무엇을 ===================== -->
-<div class="parthead" id="what"><div class="wrap">
-  <div class="q">무엇을</div>
-  <h2>무엇을, 어떤 순서로 양육할 것인가</h2>
-  <p>예수님은 “내가 너희에게 분부한 모든 것을 가르쳐 지키게 하라”(마 28:20)고 하셨습니다. 그 ‘모든 것’ 안에는 적어도 세 영역이 있습니다. 그리고 그 세 영역이 성장 청사진과 양육 로드맵이 됩니다.</p>
-  <span class="ch">제2부 · 7–14장</span>
-</div></div>
-
-<section class="blk"><div class="wrap">
-  <div class="eyebrow">7장 · 양육이란 무엇인가</div>
-  <h3 class="t">분부하신 모든 것의 세 영역</h3>
-  <p class="lead">예수님께서 제자들에게 하신 것이 양육입니다. 그리고 그 내용은 예수님께서 분부하신 모든 것입니다. 제자가 되는 데서 그치지 않고 제자를 삼는 것까지가 그 안에 들어 있습니다.</p>
-  <div class="areas">
-    <div class="area e"><b>그리스도와의 만남</b><span>Encounter</span><small>새가족 과정</small></div>
-    <div class="area g"><b>그리스도 안에서의 성장</b><span>Growth</span><small>기초 과정 · 중급 과정</small></div>
-    <div class="area r"><b>제자를 삼는 재생산</b><span>Reproduction</span><small>고급 과정</small></div>
-  </div>
-</div></section>
-
-<section class="blk alt" id="blueprint"><div class="wrap">
-  <div class="eyebrow">8장 · 페이스빌더 성장 청사진</div>
-  <h3 class="t">양육으로 지어져 가는 사람</h3>
-  <p class="lead">양육의 목표는 그리스도와의 연합, 그리스도와의 동행, 그리스도의 형상이라는 세 단어로 정리됩니다. 그렇다면 그렇게 자라 가는 사람은 어떤 사람이 되며, 무엇을 위해 살아갈까요? 그 답을 교회론과 겹쳐 한 장의 그림으로 그린 것이 성장 청사진입니다.</p>
-  ${blueprint(H)}
-  <div class="bridge">다시 말해, 성장 청사진은 교회의 세 얼굴이 성도 한 사람 안에서 이루어져 가는 모습입니다. 그리스도인은 부름받은 하나님의 백성의 한 사람이고, 제자와 증인은 교회가 훈련하고 보내는 그 사람의 모습입니다. 그렇다면 교회는 이 사람을 어떤 길로 세워 갈까요? 그 길이 양육 로드맵입니다.</div>
-</div></section>
-
-<section class="blk" id="roadmap"><div class="wrap">
+  return `<section class="blk" id="roadmap"><div class="wrap">
   <div class="eyebrow">9–14장 · 페이스빌더 양육 로드맵</div>
   <h3 class="t">세 영역, 네 과정 · ${TOTAL.series}개 시리즈 · ${TOTAL.books}권</h3>
   <p class="lead">만남·성장·재생산의 세 영역이 로드맵의 네 과정이 됩니다. 둘째 영역인 그리스도 안에서의 성장을 기초 과정과 중급 과정으로 나누었기 때문입니다. 기초 과정은 성장의 전체 그림을 먼저 보여 주고, 중급 과정은 그 그림을 더 깊고 구체적으로 공부하게 합니다.</p>
@@ -446,27 +445,15 @@ function whatPage() {
     <a href="${H}roadmap/intermediate/"><b>기초 과정을 마쳤어요</b><span>중급 과정 · 성경 시리즈부터</span></a>
     <a href="${H}roadmap/advanced/"><b>리더로 섬기고 싶어요</b><span>고급 과정 · 로마서 8장 시리즈부터</span></a>
   </div>
-</div></section>
-
-` + `
-<section class="blk"><div class="wrap"><div class="pager" style="margin:0">
-  ${prevBtn(H + 'why/', '왜', '교회는 왜 양육해야 하는가')}
-  ${nextBtn(H + 'how/', '어떻게', '로드맵을 교회에 어떻게 적용할 것인가')}
-</div></div></section>`);
-}
-
-function howPage() {
-  const H = '../';
-  return partPage(H, `어떻게 적용할 것인가 | ${VOL80}`, `최소한의 양육 시스템, 세 종류의 평신도 지도자, 양육 모임을 이끄는 원리. 『${VOL80}』 제3부.`, '/how/', `
-<!-- ===================== 제3부 어떻게 ===================== -->
-<div class="parthead" id="how"><div class="wrap">
+</div></section>`; } },
+]});
+PARTS.push({ id: 'how', q: '어떻게', qt: '로드맵을 교회에 어떻게 적용할 것인가', head: (H) => `<div class="parthead" id="how"><div class="wrap">
   <div class="q">어떻게</div>
   <h2>로드맵을 교회에 어떻게 적용할 것인가</h2>
   <p>제3부는 양육 시스템을 교회의 운영 시스템과 어떻게 접목할지를 오랫동안 고민하며 내린 잠정적인 결론입니다. 유일한 정답이라고 고집하려는 것이 아니라, 같은 길을 걷는 동료 목회자들과 후배 목회자들에게 드리는 하나의 제안입니다.</p>
   <span class="ch">제3부 · 15–18장</span>
-</div></div>
-
-<section class="blk"><div class="wrap">
+</div></div>`, leaves: [
+  { slug: 'system', ch: '15장', t: '최소한의 양육 시스템', one: '먼저 비우고, 설교 나눔 소그룹 위에 양육 소그룹을', html: (H) => `<section class="blk"><div class="wrap">
   <div class="eyebrow">15장 · 최소한의 양육 시스템</div>
   <h3 class="t">먼저 비워야 채울 수 있습니다</h3>
   <p class="lead">많은 교회가 기존의 예배와 모임과 행사를 그대로 둔 채 양육 과정을 하나 더 얹으려 합니다. 그러나 무엇인가를 줄여야 새로운 것을 할 공간이 생깁니다. 그 위에서, 모든 교회가 모든 것을 갖출 필요는 없지만 반드시 갖추어야 할 최소한이 있습니다.</p>
@@ -477,9 +464,8 @@ function howPage() {
     <div class="card"><div class="k">지도자로 세울 사람의 과정</div><h4>고급 과정</h4><p>교회는 지도자로 세울 사람을 찾아 맡을 역할에 맞게 고급 과정을 밟게 합니다. 그래야 양육이 목회자 한 사람에게 매이지 않고 교회 전체로 퍼져 갑니다.</p></div>
   </div>
   <div class="bridge">그런데 아무리 좋은 시스템도 저절로 움직이지 않습니다. 다시 말해, 양육 시스템을 세운다는 것은 결국 그 시스템을 맡을 평신도 지도자를 세운다는 뜻입니다.</div>
-</div></section>
-
-<section class="blk alt" id="leaders"><div class="wrap">
+</div></section>` },
+  { slug: 'leaders', ch: '16–17장', t: '평신도 지도자', one: '사역리더·양육리더·소그룹리더와 그들이 밟을 과정', html: (H) => `<section class="blk alt" id="leaders"><div class="wrap">
   <div class="eyebrow">16–17장 · 평신도 지도자</div>
   <h3 class="t">세 종류의 평신도 지도자</h3>
   <div class="grid g3" style="margin-top:18px">
@@ -497,9 +483,8 @@ function howPage() {
     <div class="card"><div class="k">17장 · 사역리더와 직분</div><h4>‘부장장로’ ‘부장집사’</h4><p>사역리더와 직분은 기준이 다릅니다. 그래서 부서를 이끄는 사역리더는 직분과 상관없이 ‘부장’이라 부르고, 직분이 있으면 역할을 앞에, 직분을 뒤에 붙여 부릅니다.</p></div>
     <div class="card"><div class="k">17장 · 장로를 세울 때</div><h4>가르치고, 돌보고, 다스리는 사람</h4><p>장로의 세 가지 일은 양육리더·소그룹리더·사역리더의 역할과 맞닿아 있습니다. 그래서 장로로 세울 사람은 세 역할을 모두 경험하게 하기를 제안합니다. 다만 그 경험이 직분으로 올라가는 사다리가 되어서는 안 됩니다.</p></div>
   </div>
-</div></section>
-
-<section class="blk"><div class="wrap">
+</div></section>` },
+  { slug: 'principles', ch: '18장', t: '양육 모임을 이끄는 원리', one: '한 주에 한 권, 전체에서 부분으로, 초점을 지키는 기술', html: (H) => `<section class="blk"><div class="wrap">
   <div class="eyebrow">18장 · 양육 모임을 이끄는 원리</div>
   <h3 class="t">교재는 도구입니다</h3>
   <p class="lead">교재의 설명은 이미 교재가 담고 있고, 동반자는 그 설명을 읽고 옵니다. 그러므로 양육 모임을 이끄는 사람은 교재를 다시 강의하지 않고, 나눔 질문으로 대화를 이끕니다.</p>
@@ -511,9 +496,8 @@ function howPage() {
     <div><b>가르칠 때 가장 잘 배웁니다</b><span>동반자가 배운 내용을 직접 설명해 보게 합니다.</span></div>
     <div><b>조급하지 않은 양육</b><span>사람은 평생에 걸쳐 누적적으로 변화됩니다.</span></div>
   </div>
-</div></section>
-
-<section class="close"><div class="wrap">
+</div></section>` },
+  { slug: 'conclusion', ch: '결론', t: '양육받은 사람이 양육하는 사람이 될 때', one: '로드맵은 한 바퀴를 돕니다', html: (H) => `<section class="close"><div class="wrap">
   <div class="eyebrow">결론</div>
   <h3>양육받은 사람이 양육하는 사람이 될 때</h3>
   <p>페이스빌더 양육 로드맵은 한 방향으로 끝나는 길이 아니라 한 바퀴를 도는 길입니다.</p>
@@ -521,19 +505,10 @@ function howPage() {
   <p>그리고 이 일은 거창한 시스템이 아니라 언제나 한 사람에게서 시작됩니다.</p>
   <a class="btn red" style="margin-top:18px" href="${PLAY80}" target="_blank" rel="noopener">『${VOL80}』 무료로 읽기</a>
   <a class="btn line" href="${H}vol080/">책 소개와 목차</a>
-</div></section>
-
-` + `
-<section class="blk"><div class="wrap"><div class="pager" style="margin:0">
-  ${prevBtn(H + 'what/', '무엇을', '무엇을, 어떤 순서로 양육할 것인가')}
-  ${nextBtn(H + 'about/', '저자', '송정헌 목사와 페이스빌더 출판사')}
-</div></div></section>`);
-}
-
-function aboutPage() {
-  const H = '../';
-  return partPage(H, `송정헌 목사 · 페이스빌더 출판사`, `송정헌 목사 소개, 설교, 문서 선교 후원, 교재 구입과 문의.`, '/about/', `
-<section class="blk" id="about"><div class="wrap">
+</div></section>` },
+]});
+PARTS.push({ id: 'about', q: '소개', qt: '송정헌 목사 · 페이스빌더 출판사', head: (H) => ``, leaves: [
+  { slug: 'author', ch: '저자', t: '송정헌 목사', one: '신앙 고백, 경력과 학력, 출판사의 세 가지 비전', html: (H) => `<section class="blk" id="about"><div class="wrap">
   <div class="eyebrow">ABOUT</div>
   <h3 class="t">송정헌 목사</h3>
   <p class="lead">대한예수교장로회(합동) 교단 소속 목사이자, 문서 선교 기관인 페이스빌더 출판사(Faith Builder Press) 대표입니다. 성도들이 미리 읽고 깊이 묵상한 뒤 함께 토론할 수 있도록, 풍부하고 정밀하게 구성된 ‘완성형 읽기 자료 교재’를 집필하는 일을 남은 인생의 사명으로 삼고 있습니다. 지금까지 ${TOTAL.books}권의 교재와 그 교재들을 안내하는 『${VOL80}』를 구글 플레이 북스, 교보문고, YES24에서 전자책으로 펴냈습니다.</p>
@@ -570,9 +545,8 @@ function aboutPage() {
       <div><b>Kingdom Builder</b><p>교재를 세계 각국의 언어로 번역해 선교지의 현지인 리더 양육을 돕습니다.</p></div>
     </div>
   </div>
-</div></section>
-
-<section class="blk alt" id="sermons"><div class="wrap">
+</div></section>` },
+  { slug: 'sermons', ch: '설교', t: '설교', one: '유튜브에서 듣는 설교', html: (H) => `<section class="blk alt" id="sermons"><div class="wrap">
   <div class="eyebrow">SERMONS</div>
   <h3 class="t">설교</h3>
   <div class="ser">
@@ -581,9 +555,8 @@ function aboutPage() {
     <a href="https://www.youtube.com/watch?v=9CMIhR2zsW8" target="_blank" rel="noopener"><small>창세기 22:2 · 에베소서 6:4 · 마태복음 7:11</small><b>부모가 되어가는 중입니다</b></a>
   </div>
   <a class="btn navy" style="margin-top:22px" href="https://youtube.com/@pastor.song-f3h" target="_blank" rel="noopener">유튜브에서 설교 더 보기</a>
-</div></section>
-
-<section class="blk" id="support"><div class="wrap">
+</div></section>` },
+  { slug: 'support', ch: '후원', t: '문서 선교에 함께해 주세요', one: '후원 계좌와 후원 방법', html: (H) => `<section class="blk" id="support"><div class="wrap">
   <div class="eyebrow">SUPPORT</div>
   <h3 class="t">문서 선교에 함께해 주세요</h3>
   <p class="lead">바른 신학에 기초한 신앙 서적이 널리 보급되도록, 문서 선교 사역에 함께해 주실 분들의 후원을 받습니다. 후원금은 집필·연구와 전자책 제작, 그리고 <b>선교지 언어 번역과 무상 보급</b>, 앞으로의 종이책 발간에 투명하게 사용됩니다.</p>
@@ -595,9 +568,8 @@ function aboutPage() {
     <button class="btn navy" style="margin-top:16px" onclick="var b=this;navigator.clipboard&&navigator.clipboard.writeText('우리은행 1005-904-907581 페이스빌더').then(function(){b.textContent='계좌번호가 복사되었습니다'},function(){})">계좌번호 복사하기</button>
   </div>
   <p class="lead" style="margin-top:22px"><b>관심과 기도, 그리고 일독과 전파를 부탁드립니다. 감사합니다.</b></p>
-</div></section>
-
-<section class="blk alt" id="contact"><div class="wrap">
+</div></section>` },
+  { slug: 'contact', ch: '연락', t: '교재 구입과 문의', one: '교재 찾는 법, 교회 교재 사용 문의', html: (H) => `<section class="blk alt" id="contact"><div class="wrap">
   <div class="eyebrow">CONTACT</div>
   <h3 class="t">교재 구입과 문의</h3>
   <div class="grid g2">
@@ -609,8 +581,31 @@ function aboutPage() {
       <p style="margin-top:12px;font-size:18px"><a href="mailto:faithbuilder.kr@gmail.com"><b>faithbuilder.kr@gmail.com</b></a></p>
       <p style="margin-top:4px;font-size:16px"><a href="mailto:sjhdavid@naver.com">sjhdavid@naver.com</a></p></div>
   </div>
-</div></section>
-`);
+</div></section>` },
+]});
+
+const ORDER = PARTS.flatMap((p) => p.leaves.map((l) => ({ p, l })));
+
+function hubPage(p, pi) {
+  const H = '../';
+  const headHtml = p.head(H) || `<div class="parthead"><div class="wrap"><div class="q" style="font-size:clamp(40px,7vw,64px)">${p.q}</div><h2>${p.qt}</h2></div></div>`;
+  const cards = p.leaves.map((l, i) => `<a class="hubcard" href="${H}${p.id}/${l.slug}/"><span class="n">${l.ch}</span><span class="tx"><b>${l.t}</b><span>${l.one}</span></span><i>→</i></a>`).join('');
+  const prevP = PARTS[pi - 1], nextP = PARTS[pi + 1];
+  return head({ title: `${p.q} — ${p.qt} | ${VOL80}`, desc: `${p.qt}. 『${VOL80}』`, path: `/${p.id}/` }) + nav(H) + crumb(H, [[p.q]]) + headHtml + `
+<section class="blk"><div class="wrap"><div class="hub">${cards}</div>
+<div class="pager">${prevP ? `<a href="${H}${prevP.id}/">← ${prevP.q}</a>` : `<a href="${H}">← 처음으로</a>`}${nextP ? `<a href="${H}${nextP.id}/">${nextP.q} →</a>` : `<a href="${H}">처음으로 →</a>`}</div>
+</div></section>` + footer + '\n</body></html>';
+}
+
+function leafPage(k) {
+  const H = '../../';
+  const { p, l } = ORDER[k];
+  const prev = ORDER[k - 1], next = ORDER[k + 1];
+  const sameP = (o) => o && o.p === p;
+  const prevHtml = sameP(prev) ? prevBtn(`${H}${p.id}/${prev.l.slug}/`, prev.l.t, prev.l.ch) : prevBtn(`${H}${p.id}/`, p.q, '목록으로');
+  const nextHtml = sameP(next) ? nextBtn(`${H}${p.id}/${next.l.slug}/`, next.l.t, next.l.ch) : (next ? nextBtn(`${H}${next.p.id}/`, next.p.q, next.p.qt) : nextBtn(H, '처음으로', '첫 화면'));
+  return head({ title: `${l.t} | ${p.q} — ${VOL80}`, desc: `${l.t} — ${l.one}. 『${VOL80}』 ${l.ch}.`, path: `/${p.id}/${l.slug}/` }) + nav(H) + crumb(H, [[p.q, `${H}${p.id}/`], [l.t]]) + l.html(H) + `
+<section class="blk"><div class="wrap"><div class="pager" style="margin:0">${prevHtml}${nextHtml}</div></div></section>` + footer + '\n</body></html>';
 }
 
 // ---------- 첫 화면(인트로) ----------
@@ -678,7 +673,7 @@ function vol80Page() {
   const home = '../';
   const toc = TOC80.map(([pt, chs]) => `<div class="pt">${pt ? `<b>${esc(pt)}</b>` : ''}${chs.map(([n, t, subs]) =>
     subs.length ? `<details><summary><i>${n}</i>${esc(t)}</summary><ul>${subs.map((s) => `<li>${esc(s)}</li>`).join('')}</ul></details>`
-      : `<details><summary><i>${n}</i><a href="${home}what/#roadmap" style="text-decoration:none">${esc(t)}</a></summary></details>`).join('')}</div>`).join('');
+      : `<details><summary><i>${n}</i><a href="${home}what/roadmap/" style="text-decoration:none">${esc(t)}</a></summary></details>`).join('')}</div>`).join('');
   return head({
     title: `『${VOL80}』 — ${VOL80_SUB} | 페이스빌더 출판사`,
     desc: `VOL.080 『${VOL80}』 — ${VOL80_SUB}. 송정헌 지음. 구글 플레이 북스에서 무료로 읽으실 수 있습니다. 부록에 79권 교재의 책별 목차 수록.`,
@@ -730,7 +725,7 @@ function vol80Page() {
   </div>
   <div style="margin-top:30px;text-align:center">
     <a class="btn red" href="${PLAY80}" target="_blank" rel="noopener">구글 플레이 북스에서 무료로 읽기</a>
-    <a class="btn ghost" href="${home}what/#roadmap">79권 로드맵 보기</a>
+    <a class="btn ghost" href="${home}what/roadmap/">79권 로드맵 보기</a>
   </div>
 </div></section>
 ` + footer + '\n</body></html>';
@@ -755,9 +750,9 @@ function coursePage(c, i) {
     title: `${c.no}. ${c.name} | 페이스빌더 양육 로드맵`,
     desc: `${c.name}${c.sub ? `(${c.sub})` : ''} ${c.count}권 — ${c.lead.split('.')[0]}. 책마다 목차를 보실 수 있습니다.`,
     path: `/roadmap/${c.id}/`,
-  }) + nav(home) + `
+  }) + nav(home) + crumb(home, [['무엇을', `${home}what/`], ['양육 로드맵', `${home}what/roadmap/`], [c.name]]) + `
   <div class="chead" style="background:${c.color}"><div class="wrap">
-    <a class="crumb" href="${home}what/#roadmap">← 로드맵 전체 보기</a>
+    <a class="crumb" href="${home}what/roadmap/">← 로드맵 전체 보기</a>
     <div class="eyebrow" style="color:#f0dfb8;margin-top:18px">STAGE ${c.no} · ${esc(c.area)}</div>
     <h1>${c.name}${c.sub ? ` <span style="font-size:.6em">(${c.sub})</span>` : ''}</h1>
     <p>${esc(c.lead)}</p>
@@ -768,7 +763,7 @@ function coursePage(c, i) {
   ${c.note ? `<div class="note">${esc(c.note)}</div>` : ''}
   <div class="note" style="background:var(--navy);color:#fff;border:0">이 과정이 로드맵 전체에서 어떤 자리에 있는지는 『${VOL80}』 ${({ newcomer: '10장', basic: '11–12장', intermediate: '13장', advanced: '14장' })[c.id]}에서 자세히 설명합니다. <a href="${home}vol080/" style="color:var(--gold-l)">책 소개 보기 →</a></div>
   <div class="pager">
-    ${prev ? `<a href="../${prev.id}/">← ${prev.no}. ${prev.name}</a>` : `<a href="${home}what/">← 성장 청사진</a>`}
+    ${prev ? `<a href="../${prev.id}/">← ${prev.no}. ${prev.name}</a>` : `<a href="${home}what/blueprint/">← 성장 청사진</a>`}
     ${next ? `<a href="../${next.id}/">${next.no}. ${next.name} →</a>` : `<a href="${home}how/">어떻게 적용할 것인가 →</a>`}
   </div>
 </main>
@@ -788,6 +783,7 @@ function write(rel, html) {
   console.log('wrote', f);
 }
 write('index.html', index());
-for (const [n, f] of [['why', whyPage], ['what', whatPage], ['how', howPage], ['about', aboutPage]]) write(PREVIEW ? `${n}/index.html` : `${n}.html`, f());
+PARTS.forEach((p, i) => write(PREVIEW ? `${p.id}/index.html` : `${p.id}.html`, hubPage(p, i)));
+ORDER.forEach(({ p, l }, k) => write(PREVIEW ? `${p.id}/${l.slug}/index.html` : `${p.id}/${l.slug}.html`, leafPage(k)));
 write(PREVIEW ? 'vol080/index.html' : 'vol080.html', vol80Page());
 courses.forEach((c, i) => write(PREVIEW ? `roadmap/${c.id}/index.html` : `roadmap/${c.id}.html`, coursePage(c, i)));
