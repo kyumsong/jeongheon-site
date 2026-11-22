@@ -4,80 +4,155 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>2. 기초 과정 | 페이스빌더 양육 로드맵</title>
-<meta name="description" content="기초 과정 14권 — 그리스도와 연합한 사람으로 뿌리를 내리는 과정입니다.">
+<meta name="description" content="기초 과정 14권 — 그리스도와 연합한 사람으로 뿌리를 내리는 과정입니다. 책마다 목차를 보실 수 있습니다.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="2. 기초 과정 | 페이스빌더 양육 로드맵">
-<meta property="og:description" content="기초 과정 14권 — 그리스도와 연합한 사람으로 뿌리를 내리는 과정입니다.">
+<meta property="og:description" content="기초 과정 14권 — 그리스도와 연합한 사람으로 뿌리를 내리는 과정입니다. 책마다 목차를 보실 수 있습니다.">
 <meta property="og:url" content="https://www.송정헌목사.한국/roadmap/basic/">
+<meta property="og:image" content="https://www.송정헌목사.한국/og-vol080.jpg">
 <meta property="og:site_name" content="송정헌 목사 · 페이스빌더 출판사">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&family=Noto+Serif+KR:wght@600;700&display=swap" rel="stylesheet">
 <style>
-:root{--navy:#2c4568;--navy-d:#213654;--cream:#f6f2ea;--paper:#fffdf8;--gold:#c9a96e;--ink:#2a2a2a;--mute:#6b6760;--line:#e4dccb}
+:root{--navy:#2c4568;--navy-d:#1c2c47;--cream:#f6f2ea;--paper:#fffdf8;--gold:#c9a96e;--gold-l:#f0dfb8;--red:#c0392b;--ink:#2a2a2a;--mute:#6b6760;--line:#e4dccb;
+--enc:#1f6b57;--grw:#4e4479;--rep:#9a4a2b}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--cream);color:var(--ink);font-family:'Noto Sans KR',system-ui,sans-serif;font-size:17px;line-height:1.8;word-break:keep-all}
 h1,h2,h3,h4{font-family:'Noto Serif KR',serif;line-height:1.35;margin:0}
 a{color:inherit}
-.wrap{max-width:1040px;margin:0 auto;padding:0 22px}
-.eyebrow{font-size:13px;letter-spacing:.22em;color:var(--gold);font-weight:500}
-header.top{background:var(--navy);color:#fff}
-header.top nav{display:flex;justify-content:space-between;align-items:center;padding:16px 0;font-size:15px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+.eyebrow{font-size:13px;letter-spacing:.2em;color:var(--gold);font-weight:600}
+.nw{white-space:nowrap}
+/* 머리글 */
+header.top{background:var(--navy-d);color:#fff;position:sticky;top:0;z-index:20;box-shadow:0 1px 0 rgba(255,255,255,.06)}
+header.top nav{display:flex;justify-content:space-between;align-items:center;height:58px;font-size:15px}
 header.top nav a{text-decoration:none;opacity:.85;margin-left:18px}
 header.top nav a:hover{opacity:1}
+header.top nav a.q{font-family:'Noto Serif KR',serif;font-weight:700;color:var(--gold-l);opacity:1}
 header.top .brand{font-weight:700;opacity:1;margin:0;letter-spacing:.02em}
-.hero{padding-top:70px;padding-bottom:80px}
-.hero .who{font-size:15px;color:#d9cfb9;margin-bottom:18px}
-.hero h1{font-size:clamp(32px,6vw,54px);font-weight:700;margin:6px 0 18px}
-.hero p.sub{font-size:19px;color:#e7e2d6;max-width:640px;margin:0 0 30px}
-.btn{display:inline-block;padding:13px 22px;border-radius:999px;text-decoration:none;font-weight:600;font-size:16px;margin:0 8px 10px 0}
-.btn.gold{background:var(--gold);color:#1e2a3c}
+/* 첫 화면 */
+.hero{background:linear-gradient(180deg,var(--navy) 0%,#243a5a 100%);color:#fff}
+.hero .in{display:grid;grid-template-columns:minmax(200px,330px) 1fr;gap:56px;align-items:center;padding:64px 0 70px}
+.cover{position:relative}
+.cover img{width:100%;height:auto;display:block;border:1px solid rgba(201,169,110,.6);box-shadow:0 24px 50px rgba(0,0,0,.35)}
+.badge{position:absolute;top:-18px;left:-18px;width:82px;height:82px;border-radius:50%;background:var(--red);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;font-weight:700;box-shadow:0 6px 16px rgba(0,0,0,.3);transform:rotate(-10deg)}
+.badge b{font-size:22px;line-height:1}.badge small{font-size:11px;letter-spacing:.15em;margin-top:3px}
+.hero .who{font-size:14.5px;color:#d9cfb9;margin-bottom:14px}
+.hero h1{font-size:clamp(34px,5.4vw,56px);font-weight:700;margin:10px 0 10px}
+.hero .sub{font-family:'Noto Serif KR',serif;font-size:clamp(19px,2.4vw,24px);color:var(--gold-l);margin:0 0 20px}
+.hero p.lead{color:#e7e2d6;max-width:600px;margin:0 0 26px;font-size:17.5px}
+.btn{display:inline-block;padding:13px 22px;border-radius:999px;text-decoration:none;font-weight:600;font-size:16px;margin:0 8px 10px 0;border:0;cursor:pointer;font-family:inherit}
+.btn.red{background:var(--red);color:#fff}.btn.gold{background:var(--gold);color:#1e2a3c}
 .btn.line{border:1.5px solid rgba(255,255,255,.6);color:#fff}
 .btn.navy{background:var(--navy);color:#fff}
-section.blk{padding:72px 0;border-bottom:1px solid var(--line)}
+.btn.ghost{border:1.5px solid var(--navy);color:var(--navy);background:transparent}
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:34px}
+.three a{display:block;text-decoration:none;border-radius:12px;padding:14px 16px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16)}
+.three a b{display:block;font-family:'Noto Serif KR',serif;font-size:18px}
+.three a span{font-size:14px;color:#d9cfb9}
+.three a.e b{color:#9fe0c9}.three a.g b{color:#cfc6ff}.three a.r b{color:#ffc3ab}
+/* 세 문 */
+.doors{background:var(--paper);border-bottom:1px solid var(--line)}
+.doors .in{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding:28px 0}
+.door{display:flex;gap:14px;align-items:flex-start;text-decoration:none;padding:16px;border-radius:12px;border:1px solid var(--line);background:#fff;transition:transform .15s,box-shadow .15s}
+.door:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(44,69,104,.12)}
+.door .ic{flex:0 0 44px;height:44px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Noto Serif KR',serif;font-weight:700}
+.door b{display:block;color:var(--navy);font-size:16.5px}
+.door span{font-size:14.5px;color:var(--mute);line-height:1.6;display:block;margin-top:2px}
+/* 부(部) 머리 */
+.parthead{background:var(--navy);color:#fff;padding:54px 0 46px}
+.parthead .q{font-family:'Noto Serif KR',serif;font-size:clamp(52px,9vw,92px);font-weight:700;line-height:1;color:var(--gold-l)}
+.parthead h2{font-size:clamp(26px,4vw,36px);margin:14px 0 6px}
+.parthead p{color:#e2dccd;max-width:760px;margin:6px 0 0}
+.parthead .ch{display:inline-block;margin-top:14px;font-size:13.5px;border:1px solid rgba(255,255,255,.3);border-radius:999px;padding:3px 12px;color:#e7e2d6}
+section.blk{padding:64px 0;border-bottom:1px solid var(--line)}
 section.blk.alt{background:var(--paper)}
-.blk h2{font-size:clamp(26px,4vw,34px);color:var(--navy);margin:8px 0 18px}
-.lead{font-size:18px;color:#3b3a37;max-width:760px}
+.blk h3.t{font-size:clamp(23px,3.4vw,30px);color:var(--navy);margin:6px 0 14px}
+.lead{font-size:18px;color:#3b3a37;max-width:780px}
 .grid{display:grid;gap:18px}
-.g3{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(min(100%,270px),1fr))}
 .g2{grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr))}
 .card{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:24px}
 .alt .card{background:var(--cream)}
-.card h3{font-size:20px;color:var(--navy);margin-bottom:8px}
-.card .k{font-size:13px;color:var(--gold);font-weight:700;letter-spacing:.08em}
+.card h4{font-size:20px;color:var(--navy);margin-bottom:8px}
+.card .k{font-size:13px;color:var(--gold);font-weight:700;letter-spacing:.06em}
 .card p{margin:6px 0 0;color:#46443f;font-size:16px}
-.face{border-top:4px solid var(--navy)}
-.face.f2{border-top-color:var(--gold)}.face.f3{border-top-color:#7a2e35}
-.areas{display:flex;flex-wrap:wrap;gap:10px;margin:26px 0 30px}
-.area{flex:1 1 220px;border-left:4px solid var(--gold);padding:6px 0 6px 14px}
-.area b{display:block;font-family:'Noto Serif KR',serif;color:var(--navy);font-size:19px}
-.area span{font-size:15px;color:var(--mute)}
+.face{border-top:4px solid var(--navy)}.face.f2{border-top-color:var(--gold)}.face.f3{border-top-color:#7a2e35}
+.bridge{margin:30px 0 0;padding:18px 22px;border-left:4px solid var(--gold);background:#fff;border-radius:0 12px 12px 0;font-size:17px;color:#3b3a37;max-width:860px}
+.steps{list-style:none;margin:24px 0 0;padding:0;counter-reset:s;display:grid;gap:10px;max-width:820px}
+.steps li{counter-increment:s;position:relative;padding:12px 16px 12px 54px;background:var(--paper);border:1px solid var(--line);border-radius:10px;font-size:16.5px}
+.alt .steps li{background:var(--cream)}
+.steps li::before{content:counter(s);position:absolute;left:14px;top:12px;width:28px;height:28px;border-radius:50%;background:var(--navy);color:#fff;font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:center}
+/* 세 영역 */
+.areas{display:grid;grid-template-columns:1fr 2fr 1fr;gap:12px;margin:26px 0 6px}
+.area{border-radius:12px;padding:16px 18px;color:#fff}
+.area b{display:block;font-family:'Noto Serif KR',serif;font-size:19px}
+.area span{font-size:14.5px;opacity:.9}
+.area.e{background:var(--enc)}.area.g{background:var(--grw)}.area.r{background:var(--rep)}
+.area small{display:block;font-size:13px;opacity:.85;margin-top:4px}
+/* 성장 청사진 */
+.bp-wrap{display:grid;grid-template-columns:1fr 340px;gap:24px;margin-top:28px;align-items:start}
+.bp{display:grid;grid-template-columns:150px 1fr 150px;grid-template-rows:repeat(7,auto);gap:10px 12px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px}
+.bp button{font-family:inherit;text-align:center;cursor:pointer;border-radius:12px;padding:10px 12px;border:2px solid;transition:transform .12s,box-shadow .12s;line-height:1.45}
+.bp button:hover,.bp button.on{transform:translateY(-1px);box-shadow:0 6px 16px rgba(0,0,0,.12)}
+.bp button.on{outline:3px solid var(--gold);outline-offset:2px}
+.bp b{display:block;font-family:'Noto Serif KR',serif;font-size:17px}
+.bp span{display:block;font-size:13px}
+.n-g{grid-column:1/4;grid-row:1;background:#f1efe8;border-color:#888780;color:#2c2c2a}
+.n-p{background:#eeedfe;border-color:#534ab7;color:#3c3489}
+.n-c{background:#faece7;border-color:#993c1d;color:#712b13}
+.n-t{background:#e1f5ee;border-color:#0f6e56;color:#0c4a3a;display:flex;flex-direction:column;justify-content:center}
+.b-faith{grid-column:2;grid-row:2}.b-union{grid-column:2;grid-row:3}.b-walk{grid-column:2;grid-row:4}.b-image{grid-column:2;grid-row:5}
+.b-mis{grid-column:2;grid-row:6;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.b-end{grid-column:1/4;grid-row:7}
+.b-xn{grid-column:1;grid-row:2/4}.b-dis{grid-column:1;grid-row:4/6}.b-wit{grid-column:1;grid-row:6}
+.b-new{grid-column:3;grid-row:3}
+.bp .bp-note{grid-column:1/4;grid-row:8;font-size:12.5px;color:var(--mute);text-align:center}
+.bp-panel{position:sticky;top:80px;background:var(--navy);color:#fff;border-radius:16px;padding:24px;min-height:260px}
+.bp-panel .k{font-size:12.5px;letter-spacing:.14em;color:var(--gold)}
+.bp-panel h4{font-size:24px;margin:6px 0 10px;color:#fff}
+.bp-panel p{margin:0 0 10px;color:#e7e2d6;font-size:15.5px}
+.bp-panel .v{font-size:14px;color:var(--gold-l)}
+.bp-panel a{color:var(--gold-l);font-weight:600;font-size:14.5px}
+/* 로드맵 */
 .course{display:flex;gap:18px;align-items:flex-start;text-decoration:none;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:22px;transition:transform .15s,box-shadow .15s}
 .course:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(44,69,104,.12)}
 .num{flex:0 0 52px;height:52px;border-radius:50%;color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Noto Serif KR',serif;font-size:24px;font-weight:700}
-.course h3{font-size:22px}
-.course h3 small{white-space:nowrap;font-size:14px;color:var(--mute);font-family:'Noto Sans KR';font-weight:400;margin-left:6px}
+.course h4{font-size:22px}
+.course h4 small{white-space:nowrap;font-size:14px;color:var(--mute);font-family:'Noto Sans KR';font-weight:400;margin-left:6px}
 .course p{margin:6px 0 8px;font-size:15.5px;color:#4a4843}
 .course .go{font-size:14px;font-weight:600}
 .chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
 .chip{font-size:13px;border:1px solid var(--line);border-radius:6px;padding:2px 9px;background:#fff;color:#444}
-.where{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));margin-top:26px}
-.where a{display:block;text-decoration:none;background:var(--navy);color:#fff;border-radius:12px;padding:18px 20px}
-.where a b{display:block;font-size:17px}
-.where a span{font-size:14.5px;color:#d9cfb9}
-table{width:100%;border-collapse:collapse;background:var(--paper);border-radius:12px;overflow:hidden;font-size:15.5px}
-th,td{padding:12px 14px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
-th{background:var(--navy);color:#fff;font-weight:600}
-td.c{text-align:center}
-.tbl{overflow-x:auto;margin-top:22px}
-.small{font-size:14.5px;color:var(--mute)}
-.book80{display:grid;grid-template-columns:minmax(0,1fr);gap:22px;background:var(--navy);color:#fff;border-radius:18px;padding:34px}
-.book80 h3{font-size:28px;color:#fff}
-.book80 ol{margin:10px 0 0;padding-left:22px}
-.book80 li{margin:6px 0}
-.book80 .small{color:#d9cfb9}
+.where{display:grid;gap:12px;grid-template-columns:repeat(5,1fr);margin-top:18px}
+.where a{display:block;text-decoration:none;background:var(--navy);color:#fff;border-radius:12px;padding:16px 18px}
+.where a b{display:block;font-size:16.5px}.where a span{font-size:14px;color:#d9cfb9}
+/* 지도자 과정 */
+.flow{display:grid;gap:14px;margin-top:22px}
+.flow .row{display:grid;grid-template-columns:170px 1fr;gap:14px;align-items:center;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.alt .flow .row{background:var(--cream)}
+.flow .who b{display:block;font-family:'Noto Serif KR',serif;color:var(--navy);font-size:18px}
+.flow .who span{font-size:13.5px;color:var(--mute)}
+.flow ol{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.flow li{font-size:14px;padding:5px 11px;border-radius:8px;background:#fff;border:1px solid var(--line)}
+.flow li.x{background:#fbf3e2;border-color:#e8d3a6}
+.flow li+li::before{content:'→';margin:0 6px 0 -2px;color:var(--gold);font-weight:700}
+.principles{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:12px;margin-top:22px}
+.principles div{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:16px}
+.principles b{display:block;font-family:'Noto Serif KR',serif;color:var(--navy);font-size:17px}
+.principles span{font-size:14.5px;color:#55524b}
+/* 결론 */
+.close{background:var(--navy-d);color:#fff;padding:70px 0;text-align:center}
+.close h3{font-size:clamp(24px,4vw,34px);color:#fff;margin:10px 0 14px}
+.close p{max-width:720px;margin:0 auto 10px;color:#e2dccd}
+.loop{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin:24px 0 30px}
+.loop span{border:1px solid rgba(255,255,255,.3);border-radius:999px;padding:6px 14px;font-size:15px}
+.loop i{font-style:normal;color:var(--gold)}
+/* 소개·후원·연락 */
 .tl{list-style:none;margin:0;padding:0}
 .tl li{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px dashed var(--line);font-size:16px}
 .tl li span.y{color:var(--mute);white-space:nowrap;font-size:14.5px}
@@ -86,10 +161,11 @@ td.c{text-align:center}
 .ser a{display:block;text-decoration:none;padding:14px 0;border-bottom:1px solid var(--line)}
 .ser a small{color:var(--gold);font-weight:600;font-size:13.5px}
 .ser a b{display:block;font-family:'Noto Serif KR',serif;font-size:18px;color:var(--navy)}
+.small{font-size:14.5px;color:var(--mute)}
 footer{background:var(--navy-d);color:#cfc7b5;padding:36px 0;font-size:14.5px}
 footer a{color:#fff}
 /* 과정 페이지 */
-.chead{color:#fff;padding:54px 0 60px}
+.chead{color:#fff;padding:50px 0 56px}
 .chead h1{font-size:clamp(30px,5vw,44px);margin:10px 0 14px}
 .chead p{max-width:780px;color:#efe9dc;margin:0}
 .crumb{font-size:14px;opacity:.85;text-decoration:none}
@@ -99,82 +175,131 @@ footer a{color:#fff}
 .series{margin-top:30px}
 .series h3{font-size:21px}
 .series .meta{font-size:14px;color:var(--mute);margin:2px 0 12px}
-.books{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
-.book{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:18px;display:flex;flex-direction:column}
+.books{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));align-items:start}
+.book{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:18px}
 .book .v{font-size:12.5px;font-weight:700;letter-spacing:.08em}
 .book h4{font-size:18px;margin:4px 0 6px;color:var(--ink)}
-.book p{font-size:14.5px;color:#55524b;margin:0 0 12px;flex:1}
-.book a{font-size:13.5px;font-weight:600;text-decoration:none}
+.book p{font-size:14.5px;color:#55524b;margin:0 0 10px}
+.book details{border-top:1px dashed var(--line);padding-top:8px;margin-top:4px}
+.book summary{cursor:pointer;font-size:13.5px;font-weight:600;color:var(--navy);list-style:none}
+.book summary::-webkit-details-marker{display:none}
+.book summary::before{content:'＋ ';}
+.book details[open] summary::before{content:'－ ';}
+.book ol{list-style:none;margin:8px 0 4px;padding:0;font-size:13.8px;color:#46443f;line-height:1.6}
+.book ol li{padding:3px 0;border-bottom:1px dotted #ece5d6}
+.book .buy{display:inline-block;margin-top:10px;font-size:13.5px;font-weight:600;text-decoration:none}
 .note{margin-top:34px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px 20px;font-size:15.5px}
 .pager{display:flex;justify-content:space-between;gap:12px;margin:48px 0 10px;flex-wrap:wrap}
 .pager a{text-decoration:none;font-weight:600;color:var(--navy)}
-@media (max-width:640px){body{font-size:16px}header.top nav .links{display:none}section.blk{padding:54px 0}.hero{padding-top:46px;padding-bottom:56px}.hero h1 br{display:none}.hero h1{font-size:30px}.book80{padding:24px}}
+/* 책 소개 페이지 */
+.toc{columns:2;column-gap:36px;margin-top:18px}
+.toc .pt{break-inside:avoid;margin-bottom:18px}
+.toc .pt>b{display:block;font-family:'Noto Serif KR',serif;color:var(--navy);font-size:17.5px;border-bottom:2px solid var(--gold);padding-bottom:4px;margin-bottom:6px}
+.toc details{padding:6px 0;border-bottom:1px dotted var(--line)}
+.toc summary{cursor:pointer;font-size:15.5px;list-style:none}
+.toc summary::-webkit-details-marker{display:none}
+.toc summary i{font-style:normal;color:var(--gold);font-weight:700;margin-right:6px}
+.toc ul{margin:6px 0 4px;padding-left:22px;font-size:14px;color:#55524b;line-height:1.65}
+@media (max-width:860px){
+ .hero .in{grid-template-columns:1fr;gap:30px;padding:40px 0 50px}
+ .cover{max-width:170px;margin:6px auto 0;order:2}
+ .hero .in>div:last-child{order:1}
+ .three,.doors .in{grid-template-columns:1fr}
+ .areas{grid-template-columns:1fr}
+ .bp-wrap{grid-template-columns:1fr}
+ .bp-panel{position:static}
+ .bp{grid-template-columns:1fr 1fr;padding:14px}
+ .n-g,.b-end,.bp .bp-note{grid-column:1/3}
+ .b-faith{grid-column:1/3;grid-row:2}.b-union{grid-column:1/3;grid-row:3}.b-new{grid-column:1/3;grid-row:4}.b-xn{grid-column:1/3;grid-row:5}
+ .b-walk{grid-column:1/3;grid-row:6}.b-image{grid-column:1/3;grid-row:7}.b-dis{grid-column:1/3;grid-row:8}
+ .b-mis{grid-column:1/3;grid-row:9}.b-wit{grid-column:1/3;grid-row:10}
+ .b-end{grid-row:11}.bp .bp-note{grid-row:12}
+ .bp .n-t{border-style:dashed}
+ .flow .row{grid-template-columns:1fr}
+ .where{grid-template-columns:1fr 1fr}
+ .toc{columns:1}
+}
+@media (max-width:640px){body{font-size:16px}header.top nav .links a:not(.q){display:none}header.top nav a{margin-left:12px}section.blk{padding:50px 0}.hero h1 br{display:none}}
 </style>
 </head>
 <body>
 <header class="top"><div class="wrap"><nav>
   <a class="brand" href="../../">송정헌 목사</a>
-  <span class="links"><a href="../../#why">왜 양육인가</a><a href="../../#roadmap">로드맵</a><a href="../../#pastors">목회자께</a><a href="../../#about">소개</a><a href="../../#support">후원</a><a href="../../#contact">연락</a></span>
-</nav></div>
+  <span class="links"><a class="q" href="../../#why">왜</a><a class="q" href="../../#what">무엇을</a><a class="q" href="../../#how">어떻게</a><a href="../../vol080/">새 책</a><a href="../../#about">소개</a><a href="../../#support">후원</a><a href="../../#contact">연락</a></span>
+</nav></div></header>
   <div class="chead" style="background:#4e4479"><div class="wrap">
     <a class="crumb" href="../../#roadmap">← 로드맵 전체 보기</a>
     <div class="eyebrow" style="color:#f0dfb8;margin-top:18px">STAGE 2 · 그리스도 안에서의 성장 ①</div>
     <h1>기초 과정</h1>
     <p>그리스도와 연합한 사람으로 뿌리를 내리는 과정입니다. 1부에서는 그리스도와 연합한 사람의 정체성과, 그리스도와 동행하며 그분을 닮아 가는 삶을 배웁니다. 2부에서는 교회가 세대를 이어 물려준 신앙의 유산인 사도신경, 성례, 십계명, 주기도문을 배웁니다. 다시 말해, 그리스도와 연합한 사람이 무엇을 믿는지, 어떤 은혜의 방편으로 자라는지, 어떻게 사는지, 어떻게 기도하는지를 배우며 1부의 연합과 동행과 닮아 감을 더 깊이 다집니다.</p>
-    <p style="margin-top:10px;opacity:.85">5개 시리즈 · 14권</p>
+    <p style="margin-top:10px;opacity:.85">5개 시리즈 · 14권 · 책마다 〔목차 보기〕를 누르면 장 제목이 펼쳐집니다</p>
   </div></div>
-</header>
 <main class="wrap">
   <div class="part"><h2>1부 · 기초양육</h2><div class="intro">두란노서원에서 펴낸 「일대일 제자양육」 교재의 주제를 이어받아 새롭게 쓴 교재로, 일대일 양육에서 그 교재를 대신해 사용할 수 있습니다.</div>
       <div class="series"><h3 style="color:#4e4479">기초양육 시리즈</h3>
       <div class="meta">VOL.027–029 · 3권</div>
       <div class="books">
-        <div class="book"><div class="v" style="color:#4e4479">VOL.027</div><h4>『그리스도와의 연합』</h4><p>예수님이 누구시며 무엇을 하셨는지 알고, 믿음으로 그분과 연합한 정체성을 세웁니다.</p>
-        <a href="https://play.google.com/store/search?q=%EC%86%A1%EC%A0%95%ED%97%8C%20%EA%B7%B8%EB%A6%AC%EC%8A%A4%EB%8F%84%EC%99%80%EC%9D%98%20%EC%97%B0%ED%95%A9&c=books" target="_blank" rel="noopener" style="color:#4e4479">구글 플레이 북스 →</a></div>
-        <div class="book"><div class="v" style="color:#4e4479">VOL.028</div><h4>『그리스도와의 동행』</h4><p>성령과 동행하며 경건의 시간·교제·전도로 하나님께, 지체에게, 이웃에게 나아갑니다.</p>
-        <a href="https://play.google.com/store/search?q=%EC%86%A1%EC%A0%95%ED%97%8C%20%EA%B7%B8%EB%A6%AC%EC%8A%A4%EB%8F%84%EC%99%80%EC%9D%98%20%EB%8F%99%ED%96%89&c=books" target="_blank" rel="noopener" style="color:#4e4479">구글 플레이 북스 →</a></div>
-        <div class="book"><div class="v" style="color:#4e4479">VOL.029</div><h4>『그리스도의 형상』</h4><p>하나님을 알아 가고, 시험을 이기고, 순종하며 섬기는 삶으로 그리스도를 닮아 갑니다.</p>
-        <a href="https://play.google.com/store/search?q=%EC%86%A1%EC%A0%95%ED%97%8C%20%EA%B7%B8%EB%A6%AC%EC%8A%A4%EB%8F%84%EC%9D%98%20%ED%98%95%EC%83%81&c=books" target="_blank" rel="noopener" style="color:#4e4479">구글 플레이 북스 →</a></div>
+        <div class="book" id="v027"><div class="v" style="color:#4e4479">VOL.027</div><h4>『그리스도와의 연합』</h4><p>예수님이 누구시며 무엇을 하셨는지 알고, 믿음으로 그분과 연합한 정체성을 세웁니다.</p>
+        <details><summary>목차 보기</summary><ol><li>1과. 예수는 누구인가?</li><li>2과. 예수는 무엇을 했는가?</li><li>3과. 다시 사신 예수는 지금 무엇을 하시는가?</li><li>4과. 믿음으로 그리스도와 연합되다</li></ol></details>
+        <a class="buy" href="https://play.google.com/store/search?q=%EC%86%A1%EC%A0%95%ED%97%8C%20%EA%B7%B8%EB%A6%AC%EC%8A%A4%EB%8F%84%EC%99%80%EC%9D%98%20%EC%97%B0%ED%95%A9&c=books" target="_blank" rel="noopener" style="color:#4e4479">구글 플레이 북스 →</a></div>
+        <div class="book" id="v028"><div class="v" style="color:#4e4479">VOL.028</div><h4>『그리스도와의 동행』</h4><p>성령과 동행하며 경건의 시간·교제·전도로 하나님께, 지체에게, 이웃에게 나아갑니다.</p>
+        <details><summary>목차 보기</summary><ol><li>1과. 성령과 동행하는 삶</li><li>2과. 경건의 시간</li><li>3과. 교제</li><li>4과. 전도</li></ol></details>
+        <a class="buy" href="https://play.google.com/store/search?q=%EC%86%A1%EC%A0%95%ED%97%8C%20%EA%B7%B8%EB%A6%AC%EC%8A%A4%EB%8F%84%EC%99%80%EC%9D%98%20%EB%8F%99%ED%96%89&c=books" target="_blank" rel="noopener" style="color:#4e4479">구글 플레이 북스 →</a></div>
+        <div class="book" id="v029"><div class="v" style="color:#4e4479">VOL.029</div><h4>『그리스도의 형상』</h4><p>하나님을 알아 가고, 시험을 이기고, 순종하며 섬기는 삶으로 그리스도를 닮아 갑니다.</p>
+        <details><summary>목차 보기</summary><ol><li>1과. 하나님을 알아 가는 삶</li><li>2과. 시험을 이기는 삶</li><li>3과. 순종하는 삶</li><li>4과. 사역하는 삶</li></ol></details>
+        <a class="buy" href="https://play.google.com/store/search?q=%EC%86%A1%EC%A0%95%ED%97%8C%20%EA%B7%B8%EB%A6%AC%EC%8A%A4%EB%8F%84%EC%9D%98%20%ED%98%95%EC%83%81&c=books" target="_blank" rel="noopener" style="color:#4e4479">구글 플레이 북스 →</a></div>
       </div></div></div><div class="part"><h2>2부 · 신앙의 유산</h2><div class="intro">사도신경·성례·십계명·주기도문은 어느 한 교단이나 시대의 것이 아니라, 교회가 세대를 이어 함께 지켜 온 신앙의 기본입니다. 종교개혁자 루터와 칼빈도 성도를 가르칠 때 요리문답에서 이 네 가지를 중심에 두었습니다. 그런데 우리는 예배 때마다 이것을 외우고 행하면서도 그 뜻을 충분히 배우지 못했습니다. 다시 말해, 이미 받은 유산을 제대로 펼쳐 보지 못한 것입니다. 그래서 2부에서는 교회가 물려준 이 유산을 다시 배웁니다.</div>
       <div class="series"><h3 style="color:#4e4479">사도신경 시리즈</h3>
       <div class="meta">무엇을 믿는가 · VOL.030–031 · 2권</div>
       <div class="books">
-        <div class="book"><div class="v" style="color:#4e4479">VOL.030</div><h4>『사도신경은 어떤 고백인가』</h4><p>사도신경이 어떻게 만들어졌고 교회가 왜 소중히 여겨 왔는지, 그 구조와 고백의 의미를 배웁니다.</p>
-        <a href="https://play.google.com/store/search?q=%EC%86%A1%EC%A0%95%ED%97%8C%20%EC%82%AC%EB%8F%84%EC%8B%A0%EA%B2%BD%EC%9D%80%20%EC%96%B4%EB%96%A4%20%EA%B3%A0%EB%B0%B1%EC%9D%B8%EA%B0%80&c=books" target="_blank" rel="noopener" style="color:#4e4479">구글 플레이 북스 →</a></div>
-        <div class="book"><div class="v" style="color:#4e4479">VOL.031</div><h4>『사도신경은 무엇을 고백하는가』</h4><p>성부·성자·성령, 교회와 구원과 소망까지 사도신경의 고백을 한 구절씩 풀어 갑니다.</p>
-        <a href="https://play.google.com/store/search?q=%EC%86%A1%EC%A0%95%ED%97%8C%20%EC%82%AC%EB%8F%84%EC%8B%A0%EA%B2%BD%EC%9D%80%20%EB%AC%B4%EC%97%87%EC%9D%84%20%EA%B3%A0%EB%B0%B1%ED%95%98%EB%8A%94%EA%B0%80&c=books" target="_blank" rel="noopener" style="color:#4e4479">구글 플레이 북스 →</a></div>
+        <div class="book" id="v030"><div class="v" style="color:#4e4479">VOL.030</div><h4>『사도신경은 어떤 고백인가』</h4><p>사도신경이 어떻게 만들어졌고 교회가 왜 소중히 여겨 왔는지, 그 구조와 고백의 의미를 배웁니다.</p>
+        <details><summary>목차 보기</summary><ol><li>들어가는 글: 매주 고백하지만 잘 알지 못하는 고백</li><li>1. 사도신경은 어떻게 만들어졌는가</li><li>2. 교회는 사도신경을 얼마나 소중히 여겨 왔는가</li><li>3. 사도신경의 구조</li><li>4. &quot;내가 믿사오며&quot;: 믿는다는 것은 무엇인가</li><li>5. 어떻게 고백할 것인가: 눈을 뜨고 고백하라</li><li>나가는 글: 이제 고백의 내용으로</li></ol></details>
+        <a class="buy" href="https://play.google.com/store/search?q=%EC%86%A1%EC%A0%95%ED%97%8C%20%EC%82%AC%EB%8F%84%EC%8B%A0%EA%B2%BD%EC%9D%80%20%EC%96%B4%EB%96%A4%20%EA%B3%A0%EB%B0%B1%EC%9D%B8%EA%B0%80&c=books" target="_blank" rel="noopener" style="color:#4e4479">구글 플레이 북스 →</a></div>
+        <div class="book" id="v031"><div class="v" style="color:#4e4479">VOL.031</div><h4>『사도신경은 무엇을 고백하는가』</h4><p>성부·성자·성령, 교회와 구원과 소망까지 사도신경의 고백을 한 구절씩 풀어 갑니다.</p>
+        <details><summary>목차 보기</summary><ol><li>들어가는 글: 우리는 무엇을 믿는다고 고백하는가</li><li>1. 성부 하나님: 전능하사 천지를 만드신 하나님 아버지</li><li>2. 성자 하나님: 그 외아들 우리 주 예수 그리스도</li><li>3. 낮아지신 그리스도: 잉태에서 장사까지</li><li>4. &quot;지옥에 내려가셨다&quot;: 지옥강하 논쟁</li><li>5. 높아지신 그리스도: 부활에서 재림까지</li><li>6. 성령과 교회: 성령, 거룩한 공회, 성도의 교통</li><li>7. 구원과 소망: 죄 사함, 몸의 부활, 영원한 생명</li><li>나가는 글: 큰 지도를 품고 사는 사람</li></ol></details>
+        <a class="buy" href="https://play.google.com/store/search?q=%EC%86%A1%EC%A0%95%ED%97%8C%20%EC%82%AC%EB%8F%84%EC%8B%A0%EA%B2%BD%EC%9D%80%20%EB%AC%B4%EC%97%87%EC%9D%84%20%EA%B3%A0%EB%B0%B1%ED%95%98%EB%8A%94%EA%B0%80&c=books" target="_blank" rel="noopener" style="color:#4e4479">구글 플레이 북스 →</a></div>
       </div></div>
       <div class="series"><h3 style="color:#4e4479">성례 시리즈</h3>
       <div class="meta">어떤 은혜의 방편으로 자라는가 · VOL.032–034 · 3권</div>
       <div class="books">
-        <div class="book"><div class="v" style="color:#4e4479">VOL.032</div><h4>『성례란 무엇인가』</h4><p>귀로 듣는 말씀과 눈으로 보는 말씀, 성례의 의미와 효력을 배웁니다.</p>
-        <a href="https://play.google.com/store/search?q=%EC%86%A1%EC%A0%95%ED%97%8C%20%EC%84%B1%EB%A1%80%EB%9E%80%20%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80&c=books" target="_blank" rel="noopener" style="color:#4e4479">구글 플레이 북스 →</a></div>
-        <div class="book"><div class="v" style="color:#4e4479">VOL.033</div><h4>『세례란 무엇인가』</h4><p>세례의 의미와 유아세례, 세례받은 사람의 확신과 삶을 배웁니다.</p>
-        <a href="https://play.google.com/store/search?q=%EC%86%A1%EC%A0%95%ED%97%8C%20%EC%84%B8%EB%A1%80%EB%9E%80%20%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80&c=books" target="_blank" rel="noopener" style="color:#4e4479">구글 플레이 북스 →</a></div>
-        <div class="book"><div class="v" style="color:#4e4479">VOL.034</div><h4>『성찬이란 무엇인가』</h4><p>유월절 식탁에서 주님의 식탁까지, 성찬의 의미와 합당한 참여를 배웁니다.</p>
-        <a href="https://play.google.com/store/search?q=%EC%86%A1%EC%A0%95%ED%97%8C%20%EC%84%B1%EC%B0%AC%EC%9D%B4%EB%9E%80%20%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80&c=books" target="_blank" rel="noopener" style="color:#4e4479">구글 플레이 북스 →</a></div>
+        <div class="book" id="v032"><div class="v" style="color:#4e4479">VOL.032</div><h4>『성례란 무엇인가』</h4><p>귀로 듣는 말씀과 눈으로 보는 말씀, 성례의 의미와 효력을 배웁니다.</p>
+        <details><summary>목차 보기</summary><ol><li>들어가는 글: 귀로 듣는 말씀, 눈으로 보는 말씀</li><li>1. 성례란 무엇인가</li><li>2. 구약의 성례: 할례와 유월절</li><li>3. 구약과 신약 성례의 관계</li><li>4. 성례는 어떻게 효력을 가지며, 왜 중요한가</li><li>나가는 글: 보이는 말씀을 주신 하나님</li></ol></details>
+        <a class="buy" href="https://play.google.com/store/search?q=%EC%86%A1%EC%A0%95%ED%97%8C%20%EC%84%B1%EB%A1%80%EB%9E%80%20%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80&c=books" target="_blank" rel="noopener" style="color:#4e4479">구글 플레이 북스 →</a></div>
+        <div class="book" id="v033"><div class="v" style="color:#4e4479">VOL.033</div><h4>『세례란 무엇인가』</h4><p>세례의 의미와 유아세례, 세례받은 사람의 확신과 삶을 배웁니다.</p>
+        <details><summary>목차 보기</summary><ol><li>들어가는 글: 나는 세례받은 사람입니다</li><li>1. 세례란 무엇인가</li><li>2. 누가, 언제, 어떻게 받는가</li><li>3. 유아세례</li><li>4. 세례받은 사람의 확신과 삶</li><li>나가는 글: 날마다 세례로 돌아가는 삶</li></ol></details>
+        <a class="buy" href="https://play.google.com/store/search?q=%EC%86%A1%EC%A0%95%ED%97%8C%20%EC%84%B8%EB%A1%80%EB%9E%80%20%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80&c=books" target="_blank" rel="noopener" style="color:#4e4479">구글 플레이 북스 →</a></div>
+        <div class="book" id="v034"><div class="v" style="color:#4e4479">VOL.034</div><h4>『성찬이란 무엇인가』</h4><p>유월절 식탁에서 주님의 식탁까지, 성찬의 의미와 합당한 참여를 배웁니다.</p>
+        <details><summary>목차 보기</summary><ol><li>들어가는 글: 주님이 차려 주신 식탁</li><li>1. 성찬의 뿌리: 유월절 식탁</li><li>2. 성찬의 두 단어: 죄 사함과 언약의 피</li><li>3. 떡과 잔 앞에서 바라보는 십자가</li><li>4. 그리스도는 성찬에 어떻게 계시는가</li><li>5. 성찬의 세 시제</li><li>6. 합당한 참여와 성찬 이후의 삶</li><li>나가는 글: 듣고, 보고, 만지고, 맛본 말씀</li></ol></details>
+        <a class="buy" href="https://play.google.com/store/search?q=%EC%86%A1%EC%A0%95%ED%97%8C%20%EC%84%B1%EC%B0%AC%EC%9D%B4%EB%9E%80%20%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80&c=books" target="_blank" rel="noopener" style="color:#4e4479">구글 플레이 북스 →</a></div>
       </div></div>
       <div class="series"><h3 style="color:#4e4479">십계명 시리즈</h3>
       <div class="meta">어떻게 사는가 · VOL.035–037 · 3권</div>
       <div class="books">
-        <div class="book"><div class="v" style="color:#4e4479">VOL.035</div><h4>『십계명 서론』</h4><p>은혜가 먼저인 십계명, 오늘도 유효한 그 뜻과 바르게 읽는 법을 배웁니다.</p>
-        <a href="https://play.google.com/store/search?q=%EC%86%A1%EC%A0%95%ED%97%8C%20%EC%8B%AD%EA%B3%84%EB%AA%85%20%EC%84%9C%EB%A1%A0&c=books" target="_blank" rel="noopener" style="color:#4e4479">구글 플레이 북스 →</a></div>
-        <div class="book"><div class="v" style="color:#4e4479">VOL.036</div><h4>『하나님을 사랑하라』</h4><p>첫째 돌판, 제1–4계명으로 하나님을 사랑하는 삶을 배웁니다.</p>
-        <a href="https://play.google.com/store/search?q=%EC%86%A1%EC%A0%95%ED%97%8C%20%ED%95%98%EB%82%98%EB%8B%98%EC%9D%84%20%EC%82%AC%EB%9E%91%ED%95%98%EB%9D%BC&c=books" target="_blank" rel="noopener" style="color:#4e4479">구글 플레이 북스 →</a></div>
-        <div class="book"><div class="v" style="color:#4e4479">VOL.037</div><h4>『이웃을 사랑하라』</h4><p>둘째 돌판, 제5–10계명으로 이웃을 사랑하는 삶을 배웁니다.</p>
-        <a href="https://play.google.com/store/search?q=%EC%86%A1%EC%A0%95%ED%97%8C%20%EC%9D%B4%EC%9B%83%EC%9D%84%20%EC%82%AC%EB%9E%91%ED%95%98%EB%9D%BC&c=books" target="_blank" rel="noopener" style="color:#4e4479">구글 플레이 북스 →</a></div>
+        <div class="book" id="v035"><div class="v" style="color:#4e4479">VOL.035</div><h4>『십계명 서론』</h4><p>은혜가 먼저인 십계명, 오늘도 유효한 그 뜻과 바르게 읽는 법을 배웁니다.</p>
+        <details><summary>목차 보기</summary><ol><li>들어가는 글: 왜 다시 십계명인가</li><li>1. 열 가지 말씀: 십계명의 이름과 뜻</li><li>2. 은혜가 먼저입니다: 십계명의 서문</li><li>3. 하나님이 친히 쓰신 말씀: 십계명의 중요성</li><li>4. 십계명은 오늘도 유효한가</li><li>5. 두 돌판: 하나님 사랑과 이웃 사랑</li><li>6. 십계명을 바르게 읽는 법</li><li>7. 십계명을 온전히 사신 분</li><li>나가는 글: 두 돌판을 품은 성전</li></ol></details>
+        <a class="buy" href="https://play.google.com/store/search?q=%EC%86%A1%EC%A0%95%ED%97%8C%20%EC%8B%AD%EA%B3%84%EB%AA%85%20%EC%84%9C%EB%A1%A0&c=books" target="_blank" rel="noopener" style="color:#4e4479">구글 플레이 북스 →</a></div>
+        <div class="book" id="v036"><div class="v" style="color:#4e4479">VOL.036</div><h4>『하나님을 사랑하라』</h4><p>첫째 돌판, 제1–4계명으로 하나님을 사랑하는 삶을 배웁니다.</p>
+        <details><summary>목차 보기</summary><ol><li>들어가는 글: 첫째 돌판</li><li>1. 제1계명: 나 외에는 다른 신들을 네게 두지 말라</li><li>2. 제2계명: 하나님의 우상을 만들지 말라</li><li>3. 제3계명: 여호와의 이름을 망령되게 부르지 말라</li><li>4. 제4계명 ①: 안식일을 기억하여 거룩하게 지키라</li><li>5. 제4계명 ②: 안식일의 주인</li><li>6. 제4계명 ③: 안식일에서 주일로</li><li>나가는 글: 마음과 뜻과 힘을 다하여</li></ol></details>
+        <a class="buy" href="https://play.google.com/store/search?q=%EC%86%A1%EC%A0%95%ED%97%8C%20%ED%95%98%EB%82%98%EB%8B%98%EC%9D%84%20%EC%82%AC%EB%9E%91%ED%95%98%EB%9D%BC&c=books" target="_blank" rel="noopener" style="color:#4e4479">구글 플레이 북스 →</a></div>
+        <div class="book" id="v037"><div class="v" style="color:#4e4479">VOL.037</div><h4>『이웃을 사랑하라』</h4><p>둘째 돌판, 제5–10계명으로 이웃을 사랑하는 삶을 배웁니다.</p>
+        <details><summary>목차 보기</summary><ol><li>들어가는 글: 둘째 돌판</li><li>1. 제5계명: 네 부모를 공경하라</li><li>2. 제6계명: 살인하지 말라</li><li>3. 제7계명: 간음하지 말라</li><li>4. 제8계명: 도둑질하지 말라</li><li>5. 제9계명: 네 이웃에 대하여 거짓 증거하지 말라</li><li>6. 제10계명: 네 이웃의 것을 탐내지 말라</li><li>나가는 글: 사랑은 율법의 완성</li></ol></details>
+        <a class="buy" href="https://play.google.com/store/search?q=%EC%86%A1%EC%A0%95%ED%97%8C%20%EC%9D%B4%EC%9B%83%EC%9D%84%20%EC%82%AC%EB%9E%91%ED%95%98%EB%9D%BC&c=books" target="_blank" rel="noopener" style="color:#4e4479">구글 플레이 북스 →</a></div>
       </div></div>
       <div class="series"><h3 style="color:#4e4479">주기도문 시리즈</h3>
       <div class="meta">어떻게 기도하는가 · VOL.038–040 · 3권</div>
       <div class="books">
-        <div class="book"><div class="v" style="color:#4e4479">VOL.038</div><h4>『이렇게 기도하라』</h4><p>“하늘에 계신 우리 아버지”, 기도의 함정을 넘어 아버지를 부르는 기도를 배웁니다.</p>
-        <a href="https://play.google.com/store/search?q=%EC%86%A1%EC%A0%95%ED%97%8C%20%EC%9D%B4%EB%A0%87%EA%B2%8C%20%EA%B8%B0%EB%8F%84%ED%95%98%EB%9D%BC&c=books" target="_blank" rel="noopener" style="color:#4e4479">구글 플레이 북스 →</a></div>
-        <div class="book"><div class="v" style="color:#4e4479">VOL.039</div><h4>『아버지의 영광을 위한 기도』</h4><p>이름·나라·뜻, 아버지의 영광을 먼저 구하는 세 청원을 배웁니다.</p>
-        <a href="https://play.google.com/store/search?q=%EC%86%A1%EC%A0%95%ED%97%8C%20%EC%95%84%EB%B2%84%EC%A7%80%EC%9D%98%20%EC%98%81%EA%B4%91%EC%9D%84%20%EC%9C%84%ED%95%9C%20%EA%B8%B0%EB%8F%84&c=books" target="_blank" rel="noopener" style="color:#4e4479">구글 플레이 북스 →</a></div>
-        <div class="book"><div class="v" style="color:#4e4479">VOL.040</div><h4>『우리의 필요를 위한 기도』</h4><p>양식·용서·시험, 우리의 필요를 아버지께 맡기는 세 청원을 배웁니다.</p>
-        <a href="https://play.google.com/store/search?q=%EC%86%A1%EC%A0%95%ED%97%8C%20%EC%9A%B0%EB%A6%AC%EC%9D%98%20%ED%95%84%EC%9A%94%EB%A5%BC%20%EC%9C%84%ED%95%9C%20%EA%B8%B0%EB%8F%84&c=books" target="_blank" rel="noopener" style="color:#4e4479">구글 플레이 북스 →</a></div>
+        <div class="book" id="v038"><div class="v" style="color:#4e4479">VOL.038</div><h4>『이렇게 기도하라』</h4><p>“하늘에 계신 우리 아버지”, 기도의 함정을 넘어 아버지를 부르는 기도를 배웁니다.</p>
+        <details><summary>목차 보기</summary><ol><li>1. 왜 주기도문인가</li><li>2. 저렇게 기도하지 말라: 기도의 세 가지 함정</li><li>3. 기도의 열쇠: &quot;아버지여&quot;</li><li>4. 하늘에 계신 우리 아버지</li><li>5. 아버지를 아는 자녀가 누리는 은혜</li><li>6. 상처 입은 아버지상을 넘어</li><li>7. 나라와 권세와 영광이 아버지께</li></ol></details>
+        <a class="buy" href="https://play.google.com/store/search?q=%EC%86%A1%EC%A0%95%ED%97%8C%20%EC%9D%B4%EB%A0%87%EA%B2%8C%20%EA%B8%B0%EB%8F%84%ED%95%98%EB%9D%BC&c=books" target="_blank" rel="noopener" style="color:#4e4479">구글 플레이 북스 →</a></div>
+        <div class="book" id="v039"><div class="v" style="color:#4e4479">VOL.039</div><h4>『아버지의 영광을 위한 기도』</h4><p>이름·나라·뜻, 아버지의 영광을 먼저 구하는 세 청원을 배웁니다.</p>
+        <details><summary>목차 보기</summary><ol><li>1. 아버지의 것이 먼저입니다</li><li>2. 바벨의 욕망과 주님의 기도</li><li>3. 이름이 거룩히 여김을 받으시오며</li><li>4. 나라가 임하시오며</li><li>5. 뜻이 하늘에서 이루어진 것 같이</li><li>6. 아버지의 영광을 구하는 인생</li></ol></details>
+        <a class="buy" href="https://play.google.com/store/search?q=%EC%86%A1%EC%A0%95%ED%97%8C%20%EC%95%84%EB%B2%84%EC%A7%80%EC%9D%98%20%EC%98%81%EA%B4%91%EC%9D%84%20%EC%9C%84%ED%95%9C%20%EA%B8%B0%EB%8F%84&c=books" target="_blank" rel="noopener" style="color:#4e4479">구글 플레이 북스 →</a></div>
+        <div class="book" id="v040"><div class="v" style="color:#4e4479">VOL.040</div><h4>『우리의 필요를 위한 기도』</h4><p>양식·용서·시험, 우리의 필요를 아버지께 맡기는 세 청원을 배웁니다.</p>
+        <details><summary>목차 보기</summary><ol><li>1. 아버지의 것에서 우리의 것으로</li><li>2. 오늘 우리에게 일용할 양식을</li><li>3. 일용할 양식에 만족하는 사람</li><li>4. 우리 죄를 사하여 주시옵고</li><li>5. 우리가 사하여 준 것 같이</li><li>6. 시험에 들게 하지 마시옵고 다만 악에서 구하시옵소서</li><li>7. 주기도문을 사신 예수님과 우리</li></ol></details>
+        <a class="buy" href="https://play.google.com/store/search?q=%EC%86%A1%EC%A0%95%ED%97%8C%20%EC%9A%B0%EB%A6%AC%EC%9D%98%20%ED%95%84%EC%9A%94%EB%A5%BC%20%EC%9C%84%ED%95%9C%20%EA%B8%B0%EB%8F%84&c=books" target="_blank" rel="noopener" style="color:#4e4479">구글 플레이 북스 →</a></div>
       </div></div></div>
   
+  <div class="note" style="background:var(--navy);color:#fff;border:0">이 과정이 로드맵 전체에서 어떤 자리에 있는지는 『페이스빌더 양육 시스템 소개』 11–12장에서 자세히 설명합니다. <a href="../../vol080/" style="color:var(--gold-l)">책 소개 보기 →</a></div>
   <div class="pager">
     <a href="../newcomer/">← 1. 새가족 과정</a>
     <a href="../intermediate/">3. 중급 과정 →</a>
@@ -185,6 +310,6 @@ footer a{color:#fff}
 <footer><div class="wrap">
   <div><b style="color:#fff">페이스빌더 출판사</b> (Faith Builder Press) · 대표 송정헌 목사</div>
   <div>후원 계좌 우리은행 1005-904-907581 (예금주: 페이스빌더) · 문의 <a href="mailto:faithbuilder.kr@gmail.com">faithbuilder.kr@gmail.com</a></div>
-  <div> 모든 교재는 <a href="https://play.google.com/store/search?q=%EC%86%A1%EC%A0%95%ED%97%8C&c=books" target="_blank" rel="noopener">구글 플레이 북스</a>, 교보문고, YES24에서 전자책으로 만나실 수 있습니다.</div>
+  <div>모든 교재는 <a href="https://play.google.com/store/search?q=%EC%86%A1%EC%A0%95%ED%97%8C&c=books" target="_blank" rel="noopener">구글 플레이 북스</a>, 교보문고, YES24에서 전자책으로 만나실 수 있습니다.</div>
 </div></footer>
 </body></html>

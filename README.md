@@ -35,9 +35,9 @@ The design is based on the [Apple-Style Portfolio](https://github.com/larry-xue/
 
 ## 양육 로드맵 페이지 고치기
 
-첫 페이지와 과정별 페이지(`src/pages/index.html`, `src/pages/roadmap/*.html`)는 직접 고치지 않고 생성합니다.
+첫 페이지, 새 책 소개 페이지, 과정별 페이지(`src/pages/index.html`, `src/pages/vol080.html`, `src/pages/roadmap/*.html`)는 직접 고치지 않고 생성합니다. 홈페이지의 뼈대는 VOL.080 『페이스빌더 양육 시스템 소개』의 세 질문(왜·무엇을·어떻게)을 따릅니다.
 
-1. 책 정보는 `scripts/roadmap-data.mjs`, 문장과 디자인은 `scripts/build-pages.mjs`에서 고칩니다.
+1. 책 정보와 책별 목차는 `scripts/roadmap-data.mjs`, 문장과 디자인은 `scripts/build-pages.mjs`에서 고칩니다.
 2. `npm run pages`를 실행하면 페이지가 다시 만들어집니다.
 
 이전 첫 페이지는 `backup/index.old.astro`에 보관해 두었습니다.
