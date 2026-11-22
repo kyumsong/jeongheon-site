@@ -200,6 +200,23 @@ footer a{color:#fff}
 .toc summary::-webkit-details-marker{display:none}
 .toc summary i{font-style:normal;color:var(--gold);font-weight:700;margin-right:6px}
 .toc ul{margin:6px 0 4px;padding-left:22px;font-size:14px;color:#55524b;line-height:1.65}
+
+/* 인트로 */
+.intro{min-height:100vh;background:radial-gradient(1200px 600px at 70% 20%,#34507a 0%,var(--navy) 45%,var(--navy-d) 100%);color:#fff;display:flex;align-items:center;padding:40px 0}
+.intro .who{font-size:14.5px;color:#d9cfb9;letter-spacing:.04em;margin-bottom:28px}
+.intro .in{display:grid;grid-template-columns:minmax(180px,280px) 1fr;gap:60px;align-items:center}
+.intro h1{font-size:clamp(34px,5.2vw,56px);margin:10px 0 8px}
+.intro .sub{font-family:'Noto Serif KR',serif;font-size:clamp(19px,2.4vw,25px);color:var(--gold-l);margin:0 0 30px}
+.qs{display:grid;gap:12px;max-width:560px}
+.qs a{display:grid;grid-template-columns:96px 1fr 24px;align-items:center;gap:14px;text-decoration:none;padding:16px 20px;border-radius:14px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.18);transition:background .15s,transform .15s}
+.qs a:hover{background:rgba(255,255,255,.14);transform:translateX(4px)}
+.qs b{font-family:'Noto Serif KR',serif;font-size:28px;color:var(--gold-l)}
+.qs span{font-size:16.5px;color:#eee8da}
+.qs i{font-style:normal;color:var(--gold);font-size:20px}
+.mini{margin-top:26px;display:flex;flex-wrap:wrap;gap:8px 20px;font-size:14.5px}
+.mini a{color:#d9cfb9;text-decoration:none;border-bottom:1px solid rgba(217,207,185,.4)}
+.mini a:first-child{color:#fff;font-weight:600;border-bottom-color:var(--red)}
+@media (max-width:860px){.intro .badge{width:58px;height:58px;top:-10px;left:-10px}.intro .badge b{font-size:16px}.intro .badge small{font-size:9px}.intro{align-items:flex-start}.intro .in{grid-template-columns:1fr;gap:26px}.intro .cover{max-width:150px;order:0;margin:0}.qs a{grid-template-columns:72px 1fr 18px;padding:14px 16px}.qs b{font-size:22px}.qs span{font-size:15px}}
 @media (max-width:860px){
  .hero .in{grid-template-columns:1fr;gap:30px;padding:40px 0 50px}
  .cover{max-width:170px;margin:6px auto 0;order:2}
@@ -223,322 +240,23 @@ footer a{color:#fff}
 </style>
 </head>
 <body>
-<header class="top"><div class="wrap"><nav>
-  <a class="brand" href="./">송정헌 목사</a>
-  <span class="links"><a class="q" href="./#why">왜</a><a class="q" href="./#what">무엇을</a><a class="q" href="./#how">어떻게</a><a href="./vol080/">새 책</a><a href="./#about">소개</a><a href="./#support">후원</a><a href="./#contact">연락</a></span>
-</nav></div></header>
-<section class="hero"><div class="wrap">
-  <div class="in">
-    <div class="cover"><img src="/vol080-cover.jpg" alt="『페이스빌더 양육 시스템 소개』 표지" width="640" height="907"><div class="badge"><b>무료</b><small>FREE</small></div></div>
-    <div>
-      <div class="who">송정헌 목사 · 페이스빌더 출판사</div>
-      <div class="eyebrow">VOL.080 · 새 책</div>
-      <h1>페이스빌더 <br>양육 시스템 소개</h1>
-      <p class="sub">왜, 무엇을, 어떻게 양육해야 하는가</p>
-      <p class="lead">페이스빌더 교재 79권은 새가족에서 지도자까지 이어지는 하나의 길입니다. 이 책은 그 길의 지도를 펼쳐 보일 뿐 아니라, 왜 그 길을 걸어야 하는지를 설명합니다.</p>
-      <a class="btn red" href="https://play.google.com/store/search?q=%EC%86%A1%EC%A0%95%ED%97%8C%20%ED%8E%98%EC%9D%B4%EC%8A%A4%EB%B9%8C%EB%8D%94%20%EC%96%91%EC%9C%A1%20%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EC%86%8C%EA%B0%9C&c=books" target="_blank" rel="noopener">구글 플레이 북스에서 무료로 읽기</a>
-      <a class="btn line" href="vol080/">책 소개와 목차 보기</a>
+<main class="intro">
+  <div class="wrap">
+    <div class="who">송정헌 목사 · 페이스빌더 출판사</div>
+    <div class="in">
+      <div class="cover"><img src="/vol080-cover.jpg" alt="『페이스빌더 양육 시스템 소개』 표지" width="640" height="907"><div class="badge"><b>무료</b><small>FREE</small></div></div>
+      <div>
+        <div class="eyebrow">VOL.080 · 새 책</div>
+        <h1>페이스빌더 <br>양육 시스템 소개</h1>
+        <p class="sub">왜, 무엇을, 어떻게 양육해야 하는가</p>
+        <div class="qs">
+          <a href="why/"><b>왜</b><span>교회는 왜 양육해야 하는가</span><i>→</i></a>
+          <a href="what/"><b>무엇을</b><span>무엇을, 어떤 순서로 양육할 것인가</span><i>→</i></a>
+          <a href="how/"><b>어떻게</b><span>로드맵을 교회에 어떻게 적용할 것인가</span><i>→</i></a>
+        </div>
+        <div class="mini"><a href="https://play.google.com/store/search?q=%EC%86%A1%EC%A0%95%ED%97%8C%20%ED%8E%98%EC%9D%B4%EC%8A%A4%EB%B9%8C%EB%8D%94%20%EC%96%91%EC%9C%A1%20%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EC%86%8C%EA%B0%9C&c=books" target="_blank" rel="noopener">구글 플레이 북스에서 무료로 읽기</a><a href="vol080/">책 소개와 목차</a><a href="about/">저자 소개 · 후원</a></div>
+      </div>
     </div>
   </div>
-  <div class="three" style="padding-bottom:48px;margin-top:0">
-    <a class="e" href="#why"><b>왜 양육해야 하는가</b><span>제1부 · 1–6장 — 교회론과 성도를 향한 하나님의 마음</span></a>
-    <a class="g" href="#what"><b>무엇을 양육할 것인가</b><span>제2부 · 7–14장 — 성장 청사진과 양육 로드맵</span></a>
-    <a class="r" href="#how"><b>어떻게 적용할 것인가</b><span>제3부 · 15–18장 — 최소한의 양육 시스템과 평신도 지도자</span></a>
-  </div>
-</div></section>
-
-<div class="doors"><div class="wrap in">
-  <a class="door" href="#how"><div class="ic">목</div><div><b>담임목사와 교역자이시라면</b><span>우리 교회에 맞는 최소한의 양육 시스템부터 보십시오.</span></div></a>
-  <a class="door" href="#leaders"><div class="ic">리</div><div><b>평신도 지도자이시라면</b><span>부장·양육자·소그룹 인도자가 밟을 과정을 보십시오.</span></div></a>
-  <a class="door" href="#where"><div class="ic">성</div><div><b>교재로 공부하는 성도이시라면</b><span>내가 지금 어디에 서 있고 다음에 무엇을 공부할지 보십시오.</span></div></a>
-</div></div>
-
-<!-- ===================== 제1부 왜 ===================== -->
-<div class="parthead" id="why"><div class="wrap">
-  <div class="q">왜</div>
-  <h2>교회는 왜 양육해야 하는가</h2>
-  <p>양육은 교회가 해도 되고 안 해도 되는 프로그램이 아니라, 교회가 교회이기 위해 반드시 해야 하는 일입니다. 이 책은 그 근거를 두 자리에서 찾습니다. 교회를 향한 하나님의 마음과 성도 한 사람을 향한 하나님의 마음입니다.</p>
-  <span class="ch">제1부 · 1–6장</span>
-</div></div>
-
-<section class="blk"><div class="wrap">
-  <div class="eyebrow">1–4장 · 교회를 향한 하나님의 마음</div>
-  <h3 class="t">교회의 세 얼굴</h3>
-  <p class="lead">양육이 왜 필요한지는 교회 프로그램에서가 아니라 교회론에서 찾아야 합니다. 교회가 무엇인지에 따라 교회가 무엇을 해야 하는지가 정해지기 때문입니다. 그리고 교회에는 세 가지 얼굴이 있습니다.</p>
-  <div class="grid g3" style="margin-top:24px">
-    <div class="card face"><div class="k">교회의 특권 · 1장</div><h4>세상에서 부름받은<br>하나님의 백성</h4><p>교회는 부르심에서 시작됩니다. 하나님은 우리를 세상에서 불러내어 그분의 백성으로 삼으셨습니다.</p></div>
-    <div class="card face f2"><div class="k">교회의 사명 · 2–3장</div><h4>세상으로 보냄받은<br>그리스도의 증인</h4><p>그런데 하나님은 부르신 백성을 다시 세상으로 보내셨습니다. 증인은 입으로 전하고 삶으로 그리스도를 보여 주는 사람입니다.</p></div>
-    <div class="card face f3"><div class="k">교회의 일 · 4장</div><h4>하나님의 백성을 그리스도의<br>제자로 훈련하는 공동체</h4><p>증인이 되려면 제자로 훈련받고 성령의 다스림을 받아야 합니다. 그래서 교회는 성도를 제자로 훈련합니다.</p></div>
-  </div>
-  <div class="bridge">다시 말해, 부름받은 백성이 보냄받은 증인이 되려면 그 사이를 잇는 훈련이 반드시 있어야 합니다. 교회론을 바르게 이해하면 양육은 교회의 선택 사항이 아니라 교회의 본질이 됩니다.</div>
-</div></section>
-
-<section class="blk alt"><div class="wrap">
-  <div class="eyebrow">5장 · 성도를 향한 하나님의 마음</div>
-  <h3 class="t">태어난 것에 머물지 않고 자라는 것</h3>
-  <p class="lead">그런데 양육의 근거는 교회론에만 있지 않습니다. 하나님은 교회 전체를 향해서뿐 아니라, 그 교회를 이루는 성도 한 사람 한 사람을 향해서도 마음을 품고 계십니다. 갓난아기가 젖을 먹고 자라야 하듯이, 믿음으로 거듭난 것은 신앙의 끝이 아니라 시작입니다(벧전 2:2).</p>
-  <ol class="steps">
-    <li>성도는 <b>말씀을 먹고 성령의 인도를 받으며</b> 자랍니다.</li>
-    <li>그렇게 자라는 성도는 <b>그리스도와 동행하고 그리스도를 닮아 갑니다.</b></li>
-    <li>그리스도를 닮아 가는 성도가 <b>세상 속에서 그리스도의 제자요 증인</b>이 됩니다.</li>
-  </ol>
-  <div class="bridge">그러나 오늘날 한국 교회에는 태어나기만 하고 자라지 않은 그리스도인이 많습니다. 성도가 자라지 않으면 교회는 세상에서 그리스도를 보여 주지 못합니다. 다시 말해, 성도 한 사람이 자라기를 원하시는 하나님의 마음과 교회를 세상으로 보내시려는 하나님의 마음은 결국 하나의 마음입니다.</div>
-</div></section>
-
-<section class="blk"><div class="wrap">
-  <div class="eyebrow">6장 · 어떻게 훈련할 것인가</div>
-  <h3 class="t">설교에서 소그룹으로, 소그룹에서 삶으로</h3>
-  <p class="lead">훈련은 프로그램이 아니라 삶 전체에서 일어나며, 우리를 훈련하시는 분은 성령님이십니다. 그래서 설교가 중요합니다. 그러나 설교만으로는 한 사람 한 사람의 삶을 다루기 어렵습니다. 이 한계를 넘으려면 다음이 필요합니다.</p>
-  <div class="grid g3" style="margin-top:22px">
-    <div class="card"><div class="k">소수의 모임</div><h4>함께 모여 양육받기</h4><p>소수가 함께 모여 말씀을 나누어야 그 말씀이 각 사람의 삶에 뿌리내립니다.</p></div>
-    <div class="card"><div class="k">읽기형 교재</div><h4>읽고 나누는 교재</h4><p>동반자가 먼저 읽고 공부해 오면, 양육자는 나눔 질문으로 대화를 이끕니다. 웬만한 평신도 양육자도 인도할 수 있습니다.</p></div>
-    <div class="card"><div class="k">교회의 일정</div><h4>양육을 위한 시간</h4><p>공예배 중심의 일정에는 양육할 시간이 없습니다. 양육이 본질이라면 교회의 일정이 그에 맞게 바뀌어야 합니다.</p></div>
-  </div>
-  <div class="bridge">그래서 교회는 삶에서 훈련이 일어나도록 <b>최소한의 양육 시스템</b>을 갖추어야 합니다. 그렇다면 무엇을, 어떤 순서로 양육해야 할까요?</div>
-</div></section>
-
-<!-- ===================== 제2부 무엇을 ===================== -->
-<div class="parthead" id="what"><div class="wrap">
-  <div class="q">무엇을</div>
-  <h2>무엇을, 어떤 순서로 양육할 것인가</h2>
-  <p>예수님은 “내가 너희에게 분부한 모든 것을 가르쳐 지키게 하라”(마 28:20)고 하셨습니다. 그 ‘모든 것’ 안에는 적어도 세 영역이 있습니다. 그리고 그 세 영역이 성장 청사진과 양육 로드맵이 됩니다.</p>
-  <span class="ch">제2부 · 7–14장</span>
-</div></div>
-
-<section class="blk"><div class="wrap">
-  <div class="eyebrow">7장 · 양육이란 무엇인가</div>
-  <h3 class="t">분부하신 모든 것의 세 영역</h3>
-  <p class="lead">예수님께서 제자들에게 하신 것이 양육입니다. 그리고 그 내용은 예수님께서 분부하신 모든 것입니다. 제자가 되는 데서 그치지 않고 제자를 삼는 것까지가 그 안에 들어 있습니다.</p>
-  <div class="areas">
-    <div class="area e"><b>그리스도와의 만남</b><span>Encounter</span><small>새가족 과정</small></div>
-    <div class="area g"><b>그리스도 안에서의 성장</b><span>Growth</span><small>기초 과정 · 중급 과정</small></div>
-    <div class="area r"><b>제자를 삼는 재생산</b><span>Reproduction</span><small>고급 과정</small></div>
-  </div>
-</div></section>
-
-<section class="blk alt" id="blueprint"><div class="wrap">
-  <div class="eyebrow">8장 · 페이스빌더 성장 청사진</div>
-  <h3 class="t">양육으로 지어져 가는 사람</h3>
-  <p class="lead">양육의 목표는 그리스도와의 연합, 그리스도와의 동행, 그리스도의 형상이라는 세 단어로 정리됩니다. 그렇다면 그렇게 자라 가는 사람은 어떤 사람이 되며, 무엇을 위해 살아갈까요? 그 답을 교회론과 겹쳐 한 장의 그림으로 그린 것이 성장 청사진입니다.</p>
-  
-  <div class="bp-wrap">
-    <div class="bp" role="group" aria-label="페이스빌더 성장 청사진">
-      <button type="button" class="n-g" data-k="grace"><b>은혜</b><span>하나님이 먼저 부르시고, 끝까지 이끄십니다</span></button>
-      <button type="button" class="n-p b-faith" data-k="faith"><b>믿음</b><span>성령으로 그리스도와 연합함 · 상호내주</span></button>
-      <button type="button" class="n-p b-union" data-k="union"><b>그리스도와의 연합</b><span>칭의 · 성화의 시작 · 소속으로서의 로드십</span></button>
-      <button type="button" class="n-p b-walk" data-k="walk"><b>그리스도와의 동행</b><span>성화의 뿌리 · 다스림을 받는 삶으로서의 로드십</span></button>
-      <button type="button" class="n-p b-image" data-k="image"><b>그리스도의 형상</b><span>성화의 열매 · 그리스도처럼 살아감</span></button>
-      <div class="b-mis"><button type="button" class="n-c" data-k="real"><b>하나님 나라의 실현</b><span>삶으로, 내가 속한 자리에서</span></button><button type="button" class="n-c" data-k="expand"><b>하나님 나라의 확장</b><span>삶과 복음의 말로, 이웃에게</span></button></div>
-      <button type="button" class="n-g b-end" data-k="end"><b>하나님 나라의 완성을 향하여</b><span>그리스도의 장성한 분량이 충만한 데까지</span></button>
-      <button type="button" class="n-t b-xn" data-k="xn"><b>그리스도인</b><span>그리스도께 속한 사람</span></button>
-      <button type="button" class="n-t b-dis" data-k="dis"><b>그리스도의 제자</b><span>따르며 배우고 닮아 가는 사람</span></button>
-      <button type="button" class="n-t b-wit" data-k="wit"><b>그리스도의 증인</b><span>보냄받은 사람</span></button>
-      <button type="button" class="n-t b-new" data-k="nw"><b>새로운 신분</b><span>하나님의 자녀 · 성령의 전 · 그리스도의 지체</span></button>
-      <div class="bp-note">왼쪽: 그 단계에서 빚어지는 정체성 · 오른쪽: 연합으로 받는 신분 · 칸을 누르면 설명이 나옵니다</div>
-    </div>
-    <aside class="bp-panel" aria-live="polite">
-      <div class="k" id="bpk">8장 · 페이스빌더 성장 청사진</div>
-      <h4 id="bpt">양육으로 지어져 가는 사람</h4>
-      <p id="bpd">양육 로드맵이 교회가 성도를 어떤 길로 이끄는지를 보여 주는 지도라면, 성장 청사진은 그 길을 걷는 성도 안에서 무엇이 일어나는지, 그리고 성도를 통해서 무엇이 일어나는지를 보여 주는 설계도입니다. 그림의 칸을 하나씩 눌러 보십시오.</p>
-      <div class="v" id="bpv"></div>
-      <div id="bpb" style="margin-top:10px"></div>
-    </aside>
-  </div>
-  <script>(function(){var D={"grace":{"k":"바탕","t":"은혜","d":"모든 것의 바탕은 은혜입니다. 우리가 먼저 하나님을 찾은 것이 아닙니다. 하나님이 먼저 우리를 부르시고, 끝까지 이끄십니다. 그래서 청사진의 맨 위에 은혜를 두었습니다. 아래의 모든 단계는 은혜 위에 세워집니다.","ref":"","books":""},"faith":{"k":"통로","t":"믿음","d":"그 은혜를 받아들이는 통로가 믿음입니다. 믿음은 구원의 원인이 아니라 통로입니다. 그리고 믿음은 그리스도를 내 안에 영접하는 것이면서, 내가 그리스도 안으로 들어가는 것입니다. 이것을 상호내주라고 합니다. 다시 말해 믿음으로 일어나는 일의 본질은 성령으로 그리스도와 연합하는 것입니다.","ref":"엡 2:8","books":"<a href=\"roadmap/basic/#v027\">VOL.027 『그리스도와의 연합』</a>"},"union":{"k":"첫째","t":"그리스도와의 연합","d":"포도나무에 가지가 붙어 있듯이, 우리는 그리스도 안에 있고 그리스도는 우리 안에 계십니다. 그리스도의 죽음과 부활이 나의 죽음과 부활이 되므로 의롭다 하심을 받습니다(칭의). 그런데 칭의는 끝이 아니라 성화의 시작입니다. 또 연합한 사람은 그리스도의 주권 아래로 옮겨집니다. 이것을 소속으로서의 로드십이라고 부를 수 있습니다.","ref":"요 15:5 · 골 1:13","books":"<a href=\"roadmap/basic/#v027\">VOL.027 『그리스도와의 연합』</a>"},"walk":{"k":"둘째","t":"그리스도와의 동행","d":"성령께서 내 안에 계시는 것이 곧 연합이므로, 연합한 그 순간부터 동행이 시작됩니다. 동행은 그리스도께서 성령으로 날마다 나를 다스리시고, 내가 그분을 삶의 주인으로 인정하는 삶입니다. 이것을 다스림을 받는 삶으로서의 로드십이라고 부를 수 있고, 이 주권 인정이 성화의 뿌리입니다. 그래서 경건의 시간과 교제와 전도로 하나님과 지체들과 이웃과 친밀한 관계를 맺게 됩니다.","ref":"","books":"<a href=\"roadmap/basic/#v028\">VOL.028 『그리스도와의 동행』</a>"},"image":{"k":"셋째","t":"그리스도의 형상","d":"주인으로 모신 분의 다스림을 받는 사람은 그분을 닮아 갑니다. 하나님을 알아 가고, 시험을 이기고, 순종하고, 섬기는 삶입니다. 이것이 성화의 열매입니다. 그런데 신분은 연합으로 이미 주어졌고, 열매는 그 신분 위에서 평생 자라 갑니다. 다시 말해 연합은 신분의 문제이고, 형상은 수준의 문제입니다.","ref":"고후 3:18","books":"<a href=\"roadmap/basic/#v029\">VOL.029 『그리스도의 형상』</a>"},"real":{"k":"사명 ①","t":"하나님 나라의 실현","d":"내가 속한 교회와 가정과 일터와 학교와 사회에 하나님의 뜻이 이루어지는 것입니다. 그렇게 해서 하나님 나라가 어떤 나라인지를 세상에 보여 줍니다. 실현은 주로 삶으로 이루어집니다. 그리고 실현된 삶이 확장의 문을 엽니다.","ref":"마 6:10 · 마 5:16","books":""},"expand":{"k":"사명 ②","t":"하나님 나라의 확장","d":"아직 하나님 나라 밖에 있는 이웃을 하나님 나라로 초대해, 그가 새로운 하나님의 백성이 되는 것입니다. 실현이 내가 속한 자리를 향한다면, 확장은 아직 하나님 나라 밖에 있는 사람을 향합니다. 그리고 확장은 삶과 복음의 말로 이루어집니다.","ref":"마 28:19","books":""},"end":{"k":"목적지","t":"하나님 나라의 완성을 향하여","d":"이 모든 여정은 한 목적지를 향해 갑니다. 우리가 그리스도의 장성한 분량이 충만한 데까지 이르는 날, 곧 하나님 나라가 완성되는 날입니다. 그날까지 우리는 완성된 사람이 아니라 지어져 가는 사람입니다. 그리고 사명의 현장에서 한계와 죄성을 다시 마주할 때마다, 우리는 그리스도의 다스림 앞으로 다시 돌아갑니다.","ref":"엡 4:13","books":""},"xn":{"k":"정체성","t":"그리스도인","d":"그리스도와 연합한 사람이 그리스도인입니다. 이름 그대로 그리스도께 속한 사람입니다. 다시 말해 그리스도인은 세상에서 부름받아 그리스도께 속한 하나님의 백성입니다. 교회의 첫째 얼굴, 곧 부름받은 하나님의 백성의 한 사람입니다.","ref":"벧전 2:9","books":""},"dis":{"k":"정체성","t":"그리스도의 제자","d":"그리스도와 동행하며 그분을 닮아 가는 사람이 그리스도의 제자입니다. 제자는 스승을 따르며 배우고, 마침내 스승을 닮아 가는 사람입니다. 그리스도인이라는 신분은 단번에 주어지지만, 제자와 증인은 평생 자라 갑니다.","ref":"마 28:20","books":""},"wit":{"k":"정체성","t":"그리스도의 증인","d":"사명을 감당하는 사람이 그리스도의 증인입니다. 증인은 삶으로 하나님 나라를 보여 주고, 삶과 말로 이웃을 하나님 나라로 초대하는 사람입니다. 그리고 증인이 되려면 먼저 제자로 자라야 합니다. 그리스도를 닮아 가지 않는 사람은 그리스도를 보여 줄 수도, 전할 수도 없기 때문입니다.","ref":"행 1:8","books":""},"nw":{"k":"연합으로 받는 신분","t":"새로운 신분","d":"하나님의 아들과 연합했으므로 하나님의 자녀가 되고, 성령께서 내 안에 계시므로 성령의 전이 되며, 그리스도의 몸에 붙었으므로 그리스도의 지체가 됩니다. 이 세 신분은 모두 연합의 서로 다른 얼굴입니다. 그리고 신분은 단번에 주어지고, 우리의 형편에 따라 흔들리지 않습니다.","ref":"갈 4:6 · 고전 6:19 · 고전 12:27","books":""}};var bs=document.querySelectorAll('.bp button');
-  function show(k,el){var d=D[k];if(!d)return;bs.forEach(function(b){b.classList.toggle('on',b===el)});
-  document.getElementById('bpk').textContent=d.k;document.getElementById('bpt').textContent=d.t;document.getElementById('bpd').textContent=d.d;
-  document.getElementById('bpv').textContent=d.ref?'성경 · '+d.ref:'';document.getElementById('bpb').innerHTML=d.books?'교재 · '+d.books:'';
-  if(window.innerWidth<860){document.querySelector('.bp-panel').scrollIntoView({behavior:'smooth',block:'nearest'})}}
-  bs.forEach(function(b){b.addEventListener('click',function(){show(b.getAttribute('data-k'),b)})});})();</script>
-  <div class="bridge">다시 말해, 성장 청사진은 교회의 세 얼굴이 성도 한 사람 안에서 이루어져 가는 모습입니다. 그리스도인은 부름받은 하나님의 백성의 한 사람이고, 제자와 증인은 교회가 훈련하고 보내는 그 사람의 모습입니다. 그렇다면 교회는 이 사람을 어떤 길로 세워 갈까요? 그 길이 양육 로드맵입니다.</div>
-</div></section>
-
-<section class="blk" id="roadmap"><div class="wrap">
-  <div class="eyebrow">9–14장 · 페이스빌더 양육 로드맵</div>
-  <h3 class="t">세 영역, 네 과정 · 21개 시리즈 · 79권</h3>
-  <p class="lead">만남·성장·재생산의 세 영역이 로드맵의 네 과정이 됩니다. 둘째 영역인 그리스도 안에서의 성장을 기초 과정과 중급 과정으로 나누었기 때문입니다. 기초 과정은 성장의 전체 그림을 먼저 보여 주고, 중급 과정은 그 그림을 더 깊고 구체적으로 공부하게 합니다.</p>
-  <div class="grid g2" style="margin-top:24px"><a class="course" href="roadmap/newcomer/">
-      <div class="num" style="background:#7a2e35">1</div>
-      <div><h4 style="color:#7a2e35">새가족 과정<small>2권</small></h4>
-      <p>복음 앞에 서서 예수님을 만나고, 교회에 정착하는 과정입니다.</p>
-      <div class="chips"><span class="chip">새가족 시리즈</span></div>
-      <div class="go" style="color:#7a2e35;margin-top:10px">과정과 목차 보기 →</div></div></a>
-<a class="course" href="roadmap/basic/">
-      <div class="num" style="background:#4e4479">2</div>
-      <div><h4 style="color:#4e4479">기초 과정<small>14권</small></h4>
-      <p>그리스도와 연합한 사람으로 뿌리를 내리는 과정입니다.</p>
-      <div class="chips"><span class="chip">기초양육 시리즈</span><span class="chip">사도신경 시리즈</span><span class="chip">성례 시리즈</span><span class="chip">십계명 시리즈</span><span class="chip">주기도문 시리즈</span></div>
-      <div class="go" style="color:#4e4479;margin-top:10px">과정과 목차 보기 →</div></div></a>
-<a class="course" href="roadmap/intermediate/">
-      <div class="num" style="background:#2c4568">3</div>
-      <div><h4 style="color:#2c4568">중급 과정<small>42권</small></h4>
-      <p>성경 전체의 메시지와 교리를 체계적으로 배우는 과정입니다.</p>
-      <div class="chips"><span class="chip">성경 시리즈</span><span class="chip">하나님을 아는 지식 시리즈</span><span class="chip">최초의 복음 시리즈</span><span class="chip">예수 그리스도 시리즈</span><span class="chip">성령 시리즈</span><span class="chip">선행 시리즈</span><span class="chip">하나님 나라 시리즈</span><span class="chip">산상수훈 시리즈</span><span class="chip">골리앗을 이겨라 시리즈</span><span class="chip">내 안의 사울을 직면하라 시리즈</span><span class="chip">자유와 치유 시리즈</span></div>
-      <div class="go" style="color:#2c4568;margin-top:10px">과정과 목차 보기 →</div></div></a>
-<a class="course" href="roadmap/advanced/">
-      <div class="num" style="background:#7d5a1e">4</div>
-      <div><h4 style="color:#7d5a1e">고급 과정 <small>(지도자 훈련 과정)</small><small>21권</small></h4>
-      <p>다른 사람을 세우는 지도자로 훈련받는 과정입니다.</p>
-      <div class="chips"><span class="chip">로마서 8장 성령의 사람 시리즈</span><span class="chip">교회론 시리즈</span><span class="chip">귀납적 성경공부 시리즈</span><span class="chip">소그룹 시리즈</span></div>
-      <div class="go" style="color:#7d5a1e;margin-top:10px">과정과 목차 보기 →</div></div></a></div>
-  <p class="small" style="margin-top:16px">로드맵을 따라갈수록 무게 중심이 지식에서 삶으로, 나에게서 다른 사람에게로 옮겨 갑니다. 과정마다 책 카드의 〔목차 보기〕를 누르면 각 권의 장 제목을 보실 수 있습니다.</p>
-
-  <h4 id="where" style="font-size:21px;color:var(--navy);margin-top:40px;scroll-margin-top:80px">나는 지금 어디에 서 있나요?</h4>
-  <div class="where">
-    <a href="roadmap/newcomer/"><b>처음 교회에 왔어요</b><span>새가족 과정 · 『복음 앞에 서다』부터</span></a>
-    <a href="roadmap/newcomer/"><b>다른 교회에서 옮겨 왔어요</b><span>새가족 과정 · 『복음 위에 서다』</span></a>
-    <a href="roadmap/basic/"><b>새가족 과정을 마쳤어요</b><span>기초 과정 · 기초양육 시리즈부터</span></a>
-    <a href="roadmap/intermediate/"><b>기초 과정을 마쳤어요</b><span>중급 과정 · 성경 시리즈부터</span></a>
-    <a href="roadmap/advanced/"><b>리더로 섬기고 싶어요</b><span>고급 과정 · 로마서 8장 시리즈부터</span></a>
-  </div>
-</div></section>
-
-<!-- ===================== 제3부 어떻게 ===================== -->
-<div class="parthead" id="how"><div class="wrap">
-  <div class="q">어떻게</div>
-  <h2>로드맵을 교회에 어떻게 적용할 것인가</h2>
-  <p>제3부는 양육 시스템을 교회의 운영 시스템과 어떻게 접목할지를 오랫동안 고민하며 내린 잠정적인 결론입니다. 유일한 정답이라고 고집하려는 것이 아니라, 같은 길을 걷는 동료 목회자들과 후배 목회자들에게 드리는 하나의 제안입니다.</p>
-  <span class="ch">제3부 · 15–18장</span>
-</div></div>
-
-<section class="blk"><div class="wrap">
-  <div class="eyebrow">15장 · 최소한의 양육 시스템</div>
-  <h3 class="t">먼저 비워야 채울 수 있습니다</h3>
-  <p class="lead">많은 교회가 기존의 예배와 모임과 행사를 그대로 둔 채 양육 과정을 하나 더 얹으려 합니다. 그러나 무엇인가를 줄여야 새로운 것을 할 공간이 생깁니다. 그 위에서, 모든 교회가 모든 것을 갖출 필요는 없지만 반드시 갖추어야 할 최소한이 있습니다.</p>
-  <div class="grid g2" style="margin-top:22px">
-    <div class="card"><div class="k">가장 기본이 되는 소그룹</div><h4>설교 나눔 소그룹</h4><p>담임목사의 주일 설교를 나눔지로 만들어 함께 나눕니다. 첫째 목표는 돌봄이지만, 인도자가 초점을 지키면 이 자리에서도 양육이 일어납니다. 그 위에 양육 소그룹을 세웁니다.</p></div>
-    <div class="card"><div class="k">모든 성도가 거칠 과정</div><h4>새가족 과정과 기초 과정</h4><p>새가족 과정이 없으면 새로 온 사람이 손님으로 머물고, 기초 과정이 없으면 성도는 성장의 전체 그림을 한 번도 보지 못한 채 신앙생활을 하게 됩니다.</p></div>
-    <div class="card"><div class="k">평생 깊어지는 과정</div><h4>중급 과정</h4><p>중급 과정은 단계라기보다 깊이입니다. 한 번 마치고 끝내는 과정이 아니라 평생에 걸쳐 꾸준히 나아가는 과정입니다.</p></div>
-    <div class="card"><div class="k">지도자로 세울 사람의 과정</div><h4>고급 과정</h4><p>교회는 지도자로 세울 사람을 찾아 맡을 역할에 맞게 고급 과정을 밟게 합니다. 그래야 양육이 목회자 한 사람에게 매이지 않고 교회 전체로 퍼져 갑니다.</p></div>
-  </div>
-  <div class="bridge">그런데 아무리 좋은 시스템도 저절로 움직이지 않습니다. 다시 말해, 양육 시스템을 세운다는 것은 결국 그 시스템을 맡을 평신도 지도자를 세운다는 뜻입니다.</div>
-</div></section>
-
-<section class="blk alt" id="leaders"><div class="wrap">
-  <div class="eyebrow">16–17장 · 평신도 지도자</div>
-  <h3 class="t">세 종류의 평신도 지도자</h3>
-  <div class="grid g3" style="margin-top:18px">
-    <div class="card"><div class="k">MINISTRY LEADER</div><h4>사역리더 <span class="small">(부장)</span></h4><p>찬양팀이나 교육부서처럼 교회의 한 부서나 사역을 맡아 사람들을 이끌어 함께 섬기게 합니다.</p></div>
-    <div class="card"><div class="k">NURTURE LEADER</div><h4>양육리더 <span class="small">(양육자)</span></h4><p>새가족 과정과 기초 과정의 교재로 동반자와 함께 공부하며 그를 세웁니다. 일대일 또는 두세 사람과 함께합니다.</p></div>
-    <div class="card"><div class="k">SMALL GROUP LEADER</div><h4>소그룹리더 <span class="small">(소그룹 인도자)</span></h4><p>소그룹을 맡아 말씀을 함께 나누고 서로 돌보게 합니다. 설교 나눔 소그룹이 기본 자리입니다.</p></div>
-  </div>
-  <div class="flow">
-    <div class="row"><div class="who"><b>사역리더</b><span>부장</span></div><ol><li>새가족·기초 과정</li><li>로마서 8장 시리즈 · 교회론 시리즈</li><li class="x">사역 현장</li></ol></div>
-    <div class="row"><div class="who"><b>양육리더</b><span>양육자</span></div><ol><li>새가족·기초 과정</li><li>로마서 8장 시리즈 · 교회론 시리즈</li><li>귀납적 성경공부 · 소그룹 시리즈</li><li class="x">양육리더 훈련</li></ol></div>
-    <div class="row"><div class="who"><b>소그룹리더</b><span>소그룹 인도자</span></div><ol><li>새가족·기초 과정</li><li>로마서 8장 시리즈 · 교회론 시리즈</li><li>귀납적 성경공부 · 소그룹 시리즈</li><li class="x">소그룹 경험 · 견습 리더</li></ol></div>
-  </div>
-  <p class="small" style="margin-top:12px">과정의 길이와 순서는 교회의 형편에 따라 달리할 수 있습니다. 과정 이수는 지도자가 되기 위한 필요조건이지 충분조건이 아닙니다. 지도자는 과정 이수가 아니라 성숙도로 세웁니다.</p>
-  <div class="grid g2" style="margin-top:26px">
-    <div class="card"><div class="k">17장 · 사역리더와 직분</div><h4>‘부장장로’ ‘부장집사’</h4><p>사역리더와 직분은 기준이 다릅니다. 그래서 부서를 이끄는 사역리더는 직분과 상관없이 ‘부장’이라 부르고, 직분이 있으면 역할을 앞에, 직분을 뒤에 붙여 부릅니다.</p></div>
-    <div class="card"><div class="k">17장 · 장로를 세울 때</div><h4>가르치고, 돌보고, 다스리는 사람</h4><p>장로의 세 가지 일은 양육리더·소그룹리더·사역리더의 역할과 맞닿아 있습니다. 그래서 장로로 세울 사람은 세 역할을 모두 경험하게 하기를 제안합니다. 다만 그 경험이 직분으로 올라가는 사다리가 되어서는 안 됩니다.</p></div>
-  </div>
-</div></section>
-
-<section class="blk"><div class="wrap">
-  <div class="eyebrow">18장 · 양육 모임을 이끄는 원리</div>
-  <h3 class="t">교재는 도구입니다</h3>
-  <p class="lead">교재의 설명은 이미 교재가 담고 있고, 동반자는 그 설명을 읽고 옵니다. 그러므로 양육 모임을 이끄는 사람은 교재를 다시 강의하지 않고, 나눔 질문으로 대화를 이끕니다.</p>
-  <div class="principles">
-    <div><b>한 주에 한 권</b><span>세 권 시리즈는 세 주, 다섯 권 시리즈는 다섯 주에 함께 마칩니다.</span></div>
-    <div><b>예습의 최소한</b><span>교재를 미리 읽고, 교재가 묻는 질문에 빠짐없이 답해 옵니다.</span></div>
-    <div><b>전체에서 부분으로</b><span>책 전체의 흐름을 먼저 보여 주고 각 과로 들어갑니다.</span></div>
-    <div><b>초점을 지키는 기술</b><span>머릿속에 그 과의 논리 지도를 그려 두고 나눔의 초점을 지킵니다.</span></div>
-    <div><b>가르칠 때 가장 잘 배웁니다</b><span>동반자가 배운 내용을 직접 설명해 보게 합니다.</span></div>
-    <div><b>조급하지 않은 양육</b><span>사람은 평생에 걸쳐 누적적으로 변화됩니다.</span></div>
-  </div>
-</div></section>
-
-<section class="close"><div class="wrap">
-  <div class="eyebrow">결론</div>
-  <h3>양육받은 사람이 양육하는 사람이 될 때</h3>
-  <p>페이스빌더 양육 로드맵은 한 방향으로 끝나는 길이 아니라 한 바퀴를 도는 길입니다.</p>
-  <div class="loop"><span>부름받은 백성</span><i>→</i><span>그리스도의 제자</span><i>→</i><span>보냄받은 증인</span><i>→</i><span>새로운 한 사람</span><i>↺</i></div>
-  <p>그리고 이 일은 거창한 시스템이 아니라 언제나 한 사람에게서 시작됩니다.</p>
-  <a class="btn red" style="margin-top:18px" href="https://play.google.com/store/search?q=%EC%86%A1%EC%A0%95%ED%97%8C%20%ED%8E%98%EC%9D%B4%EC%8A%A4%EB%B9%8C%EB%8D%94%20%EC%96%91%EC%9C%A1%20%EC%8B%9C%EC%8A%A4%ED%85%9C%20%EC%86%8C%EA%B0%9C&c=books" target="_blank" rel="noopener">『페이스빌더 양육 시스템 소개』 무료로 읽기</a>
-  <a class="btn line" href="vol080/">책 소개와 목차</a>
-</div></section>
-
-<section class="blk" id="about"><div class="wrap">
-  <div class="eyebrow">ABOUT</div>
-  <h3 class="t">송정헌 목사</h3>
-  <p class="lead">대한예수교장로회(합동) 교단 소속 목사이자, 문서 선교 기관인 페이스빌더 출판사(Faith Builder Press) 대표입니다. 성도들이 미리 읽고 깊이 묵상한 뒤 함께 토론할 수 있도록, 풍부하고 정밀하게 구성된 ‘완성형 읽기 자료 교재’를 집필하는 일을 남은 인생의 사명으로 삼고 있습니다. 지금까지 79권의 교재와 그 교재들을 안내하는 『페이스빌더 양육 시스템 소개』를 구글 플레이 북스, 교보문고, YES24에서 전자책으로 펴냈습니다.</p>
-  <div class="grid g2" style="margin-top:26px">
-    <div class="card creed">
-      <h4 style="margin-top:0">교리적으로</h4><p>개혁주의가 성경의 진리를 가장 잘 표현하는 교리라고 믿습니다. 그에 따라 웨스트민스터 신앙고백과 대·소요리문답을 교리적 표준문서로 존중합니다.</p>
-      <h4>목회적으로</h4><p>교회는 세상에서 부름받은 하나님의 백성이자 세상으로 보냄받은 그리스도의 증인이라고 믿습니다. 그에 따라 하나님의 백성을 그리스도의 제자로 훈련하여 세상 속의 증인으로 세우는 양육을 목회의 중심에 둡니다.</p>
-      <h4>설교자로서</h4><p>성경이 성도를 교훈하고 책망하며 바르게 교정함으로 하나님이 원하시는 의의 기준에 따라 살도록 만든다고 믿습니다. 그에 따라 성경 안에 담긴 하나님의 뜻을 순전하게 풀어 전하는 설교를 하고 있습니다.</p>
-    </div>
-    <div class="card">
-      <h4>경력</h4>
-      <ul class="tl">
-        <li>현 페이스빌더 출판사 대표 · 청목원(목회자 재교육 기관) 강사 <span class="y">현재</span></li>
-        <li>전주북문교회 담임목사 <span class="y">2016–2024</span></li>
-        <li>밴쿠버 그레이스한인교회 선임부목사 (영성·양육) <span class="y">2010–2016</span></li>
-        <li>태안사랑의교회 개척 <span class="y">2005–2010</span></li>
-        <li>국제제자훈련원 컨설팅 담당 목사 · CAL 세미나 강사 <span class="y">2002–2005</span></li>
-        <li>사랑의교회 사랑부 담당 목사 <span class="y">1999–2001</span></li>
-      </ul>
-      <h4 style="margin-top:22px">학력</h4>
-      <ul class="tl">
-        <li>총신대학교 신학대학원 (M.Div.) <span class="y">1996</span></li>
-        <li>서울대학교 대학원 사회복지학과 수료 <span class="y">1993</span></li>
-        <li>서울대학교 사회복지학과 졸업 <span class="y">1991</span></li>
-      </ul>
-      <p class="small" style="margin-top:12px"><a href="https://b2bministry.org" target="_blank" rel="noopener">청목원 홈페이지 →</a></p>
-    </div>
-  </div>
-  <div class="card" style="margin-top:18px">
-    <div class="k">FAITH BUILDER PRESS</div><h4>페이스빌더 출판사의 세 가지 비전</h4>
-    <div class="grid g3" style="margin-top:10px">
-      <div><b>Faith Builder</b><p>성도 개인이 스스로 말씀을 묵상하고 연구하여 흔들리지 않는 믿음의 집을 세우도록 돕습니다.</p></div>
-      <div><b>Pace Builder</b><p>교역자와 평신도 리더가 체계적으로 성도를 양육하도록 검증된 ‘완성형 교재’로 동역합니다.</p></div>
-      <div><b>Kingdom Builder</b><p>교재를 세계 각국의 언어로 번역해 선교지의 현지인 리더 양육을 돕습니다.</p></div>
-    </div>
-  </div>
-</div></section>
-
-<section class="blk alt" id="sermons"><div class="wrap">
-  <div class="eyebrow">SERMONS</div>
-  <h3 class="t">설교</h3>
-  <div class="ser">
-    <a href="https://www.youtube.com/watch?v=NX4t3tH9iuo" target="_blank" rel="noopener"><small>마태복음 16:16-19</small><b>마태복음에서 팔복을 해석하다</b></a>
-    <a href="https://www.youtube.com/watch?v=fviRtssOEtY" target="_blank" rel="noopener"><small>레위기 11:45</small><b>레위기에서 거룩을 배우다</b></a>
-    <a href="https://www.youtube.com/watch?v=9CMIhR2zsW8" target="_blank" rel="noopener"><small>창세기 22:2 · 에베소서 6:4 · 마태복음 7:11</small><b>부모가 되어가는 중입니다</b></a>
-  </div>
-  <a class="btn navy" style="margin-top:22px" href="https://youtube.com/@pastor.song-f3h" target="_blank" rel="noopener">유튜브에서 설교 더 보기</a>
-</div></section>
-
-<section class="blk" id="support"><div class="wrap">
-  <div class="eyebrow">SUPPORT</div>
-  <h3 class="t">문서 선교에 함께해 주세요</h3>
-  <p class="lead">바른 신학에 기초한 신앙 서적이 널리 보급되도록, 문서 선교 사역에 함께해 주실 분들의 후원을 받습니다. 후원금은 집필·연구와 전자책 제작, 그리고 <b>선교지 언어 번역과 무상 보급</b>, 앞으로의 종이책 발간에 투명하게 사용됩니다.</p>
-  <div class="card" style="margin-top:24px;border:2px solid var(--gold)">
-    <div class="k">후원 계좌</div>
-    <h4 style="font-size:24px;margin-top:6px">우리은행 1005-904-907581</h4>
-    <p style="font-size:17px">예금주: 페이스빌더</p>
-    <p style="margin-top:12px">입금하실 때 메모란에 <b>성함+후원</b> 또는 <b>성함+출판</b>을 적어 주십시오. (예: 홍길동후원)</p>
-    <button class="btn navy" style="margin-top:16px" onclick="var b=this;navigator.clipboard&&navigator.clipboard.writeText('우리은행 1005-904-907581 페이스빌더').then(function(){b.textContent='계좌번호가 복사되었습니다'},function(){})">계좌번호 복사하기</button>
-  </div>
-  <p class="lead" style="margin-top:22px"><b>관심과 기도, 그리고 일독과 전파를 부탁드립니다. 감사합니다.</b></p>
-</div></section>
-
-<section class="blk alt" id="contact"><div class="wrap">
-  <div class="eyebrow">CONTACT</div>
-  <h3 class="t">교재 구입과 문의</h3>
-  <div class="grid g2">
-    <div class="card"><h4>교재 찾는 법</h4><p>페이스빌더 교재는 지금 전자책으로 출간되어 있습니다.</p>
-      <ol style="margin:10px 0 0;padding-left:22px;font-size:16px"><li>Play 스토어 또는 구글 플레이 북스를 엽니다.</li><li>검색창에 <b>송정헌</b>을 입력합니다.</li><li>도서 탭에서 모든 책을 확인합니다.</li></ol>
-      <p class="small" style="margin-top:10px">교보문고·YES24에서도 만나실 수 있습니다.</p>
-      <a class="btn navy" style="margin-top:14px" href="https://play.google.com/store/search?q=%EC%86%A1%EC%A0%95%ED%97%8C&c=books" target="_blank" rel="noopener">구글 플레이 북스에서 전체 보기</a></div>
-    <div class="card"><h4>교회 교재 사용 · 문의</h4><p>교회에서 교재로 사용하시거나 후원과 출판에 관해 문의하시려면 이메일로 연락해 주십시오.</p>
-      <p style="margin-top:12px;font-size:18px"><a href="mailto:faithbuilder.kr@gmail.com"><b>faithbuilder.kr@gmail.com</b></a></p>
-      <p style="margin-top:4px;font-size:16px"><a href="mailto:sjhdavid@naver.com">sjhdavid@naver.com</a></p></div>
-  </div>
-</div></section>
-
-<footer><div class="wrap">
-  <div><b style="color:#fff">페이스빌더 출판사</b> (Faith Builder Press) · 대표 송정헌 목사</div>
-  <div>후원 계좌 우리은행 1005-904-907581 (예금주: 페이스빌더) · 문의 <a href="mailto:faithbuilder.kr@gmail.com">faithbuilder.kr@gmail.com</a></div>
-  <div>모든 교재는 <a href="https://play.google.com/store/search?q=%EC%86%A1%EC%A0%95%ED%97%8C&c=books" target="_blank" rel="noopener">구글 플레이 북스</a>, 교보문고, YES24에서 전자책으로 만나실 수 있습니다.</div>
-</div></footer>
+</main>
 </body></html>

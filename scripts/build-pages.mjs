@@ -201,6 +201,23 @@ footer a{color:#fff}
 .toc summary::-webkit-details-marker{display:none}
 .toc summary i{font-style:normal;color:var(--gold);font-weight:700;margin-right:6px}
 .toc ul{margin:6px 0 4px;padding-left:22px;font-size:14px;color:#55524b;line-height:1.65}
+
+/* 인트로 */
+.intro{min-height:100vh;background:radial-gradient(1200px 600px at 70% 20%,#34507a 0%,var(--navy) 45%,var(--navy-d) 100%);color:#fff;display:flex;align-items:center;padding:40px 0}
+.intro .who{font-size:14.5px;color:#d9cfb9;letter-spacing:.04em;margin-bottom:28px}
+.intro .in{display:grid;grid-template-columns:minmax(180px,280px) 1fr;gap:60px;align-items:center}
+.intro h1{font-size:clamp(34px,5.2vw,56px);margin:10px 0 8px}
+.intro .sub{font-family:'Noto Serif KR',serif;font-size:clamp(19px,2.4vw,25px);color:var(--gold-l);margin:0 0 30px}
+.qs{display:grid;gap:12px;max-width:560px}
+.qs a{display:grid;grid-template-columns:96px 1fr 24px;align-items:center;gap:14px;text-decoration:none;padding:16px 20px;border-radius:14px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.18);transition:background .15s,transform .15s}
+.qs a:hover{background:rgba(255,255,255,.14);transform:translateX(4px)}
+.qs b{font-family:'Noto Serif KR',serif;font-size:28px;color:var(--gold-l)}
+.qs span{font-size:16.5px;color:#eee8da}
+.qs i{font-style:normal;color:var(--gold);font-size:20px}
+.mini{margin-top:26px;display:flex;flex-wrap:wrap;gap:8px 20px;font-size:14.5px}
+.mini a{color:#d9cfb9;text-decoration:none;border-bottom:1px solid rgba(217,207,185,.4)}
+.mini a:first-child{color:#fff;font-weight:600;border-bottom-color:var(--red)}
+@media (max-width:860px){.intro .badge{width:58px;height:58px;top:-10px;left:-10px}.intro .badge b{font-size:16px}.intro .badge small{font-size:9px}.intro{align-items:flex-start}.intro .in{grid-template-columns:1fr;gap:26px}.intro .cover{max-width:150px;order:0;margin:0}.qs a{grid-template-columns:72px 1fr 18px;padding:14px 16px}.qs b{font-size:22px}.qs span{font-size:15px}}
 @media (max-width:860px){
  .hero .in{grid-template-columns:1fr;gap:30px;padding:40px 0 50px}
  .cover{max-width:170px;margin:6px auto 0;order:2}
@@ -250,7 +267,7 @@ function head({ title, desc, path, image = '/og-vol080.jpg' }) {
 const nav = (home) => `
 <header class="top"><div class="wrap"><nav>
   <a class="brand" href="${home}">송정헌 목사</a>
-  <span class="links"><a class="q" href="${home}#why">왜</a><a class="q" href="${home}#what">무엇을</a><a class="q" href="${home}#how">어떻게</a><a href="${home}vol080/">새 책</a><a href="${home}#about">소개</a><a href="${home}#support">후원</a><a href="${home}#contact">연락</a></span>
+  <span class="links"><a class="q" href="${home}why/">왜</a><a class="q" href="${home}what/">무엇을</a><a class="q" href="${home}how/">어떻게</a><a href="${home}vol080/">새 책</a><a href="${home}about/">소개</a><a href="${home}about/#support">후원</a></span>
 </nav></div></header>`;
 
 const footer = `
@@ -316,49 +333,14 @@ function blueprint(rel) {
 }
 
 // ---------- 첫 페이지 ----------
-function index() {
-  const home = './';
-  const courseCards = courses.map((c) => {
-    const chips = c.parts.flatMap((p) => p.series).map((s) => `<span class="chip">${esc(s.name.replace(/^[①-⑦]\s*/, ''))}</span>`).join('');
-    return `<a class="course" href="roadmap/${c.id}/">
-      <div class="num" style="background:${c.color}">${c.no}</div>
-      <div><h4 style="color:${c.color}">${c.name}${c.sub ? ` <small>(${c.sub})</small>` : ''}<small>${c.count}권</small></h4>
-      <p>${esc(c.lead.split('.')[0])}.</p>
-      <div class="chips">${chips}</div>
-      <div class="go" style="color:${c.color};margin-top:10px">과정과 목차 보기 →</div></div></a>`;
-  }).join('\n');
 
-  return head({
-    title: `${VOL80} | 송정헌 목사 · 페이스빌더 출판사`,
-    desc: `새 책 『${VOL80}』 — ${VOL80_SUB}. 페이스빌더 교재 ${TOTAL.books}권의 양육 로드맵과 성장 청사진. 구글 플레이 북스에서 무료로 읽으실 수 있습니다.`,
-    path: '/',
-  }) + nav(home) + `
-<section class="hero"><div class="wrap">
-  <div class="in">
-    <div class="cover"><img src="/vol080-cover.jpg" alt="『${VOL80}』 표지" width="640" height="907"><div class="badge"><b>무료</b><small>FREE</small></div></div>
-    <div>
-      <div class="who">송정헌 목사 · 페이스빌더 출판사</div>
-      <div class="eyebrow">VOL.080 · 새 책</div>
-      <h1>페이스빌더 <br>양육 시스템 소개</h1>
-      <p class="sub">${VOL80_SUB}</p>
-      <p class="lead">페이스빌더 교재 ${TOTAL.books}권은 새가족에서 지도자까지 이어지는 하나의 길입니다. 이 책은 그 길의 지도를 펼쳐 보일 뿐 아니라, 왜 그 길을 걸어야 하는지를 설명합니다.</p>
-      <a class="btn red" href="${PLAY80}" target="_blank" rel="noopener">구글 플레이 북스에서 무료로 읽기</a>
-      <a class="btn line" href="vol080/">책 소개와 목차 보기</a>
-    </div>
-  </div>
-  <div class="three" style="padding-bottom:48px;margin-top:0">
-    <a class="e" href="#why"><b>왜 양육해야 하는가</b><span>제1부 · 1–6장 — 교회론과 성도를 향한 하나님의 마음</span></a>
-    <a class="g" href="#what"><b>무엇을 양육할 것인가</b><span>제2부 · 7–14장 — 성장 청사진과 양육 로드맵</span></a>
-    <a class="r" href="#how"><b>어떻게 적용할 것인가</b><span>제3부 · 15–18장 — 최소한의 양육 시스템과 평신도 지도자</span></a>
-  </div>
-</div></section>
+const partPage = (H, title, desc, path, body) => head({ title, desc, path }) + nav(H) + '\n' + body + footer + '\n</body></html>';
+const nextBtn = (href, q, t) => `<a href="${href}" style="display:block;text-decoration:none;background:var(--navy);color:#fff;border-radius:14px;padding:18px 22px;min-width:260px"><span style="font-size:13px;color:var(--gold);letter-spacing:.12em">다음</span><b style="display:block;font-family:'Noto Serif KR',serif;font-size:22px;color:var(--gold-l)">${q}</b><span style="font-size:15px">${t} →</span></a>`;
+const prevBtn = (href, q, t) => `<a href="${href}" style="display:block;text-decoration:none;border:1.5px solid var(--navy);color:var(--navy);border-radius:14px;padding:18px 22px;min-width:220px"><span style="font-size:13px;color:var(--mute);letter-spacing:.12em">이전</span><b style="display:block;font-family:'Noto Serif KR',serif;font-size:22px">${q}</b><span style="font-size:15px">← ${t}</span></a>`;
 
-<div class="doors"><div class="wrap in">
-  <a class="door" href="#how"><div class="ic">목</div><div><b>담임목사와 교역자이시라면</b><span>우리 교회에 맞는 최소한의 양육 시스템부터 보십시오.</span></div></a>
-  <a class="door" href="#leaders"><div class="ic">리</div><div><b>평신도 지도자이시라면</b><span>부장·양육자·소그룹 인도자가 밟을 과정을 보십시오.</span></div></a>
-  <a class="door" href="#where"><div class="ic">성</div><div><b>교재로 공부하는 성도이시라면</b><span>내가 지금 어디에 서 있고 다음에 무엇을 공부할지 보십시오.</span></div></a>
-</div></div>
-
+function whyPage() {
+  const H = '../';
+  return partPage(H, `왜 양육해야 하는가 | ${VOL80}`, `교회는 왜 양육해야 하는가 — 교회를 향한 하나님의 마음과 성도를 향한 하나님의 마음. 『${VOL80}』 제1부.`, '/why/', `
 <!-- ===================== 제1부 왜 ===================== -->
 <div class="parthead" id="why"><div class="wrap">
   <div class="q">왜</div>
@@ -403,6 +385,25 @@ function index() {
   <div class="bridge">그래서 교회는 삶에서 훈련이 일어나도록 <b>최소한의 양육 시스템</b>을 갖추어야 합니다. 그렇다면 무엇을, 어떤 순서로 양육해야 할까요?</div>
 </div></section>
 
+` + `
+<section class="blk"><div class="wrap"><div class="pager" style="margin:0">
+  ${prevBtn(H, '처음으로', '책 소개 첫 화면')}
+  ${nextBtn(H + 'what/', '무엇을', '무엇을, 어떤 순서로 양육할 것인가')}
+</div></div></section>`);
+}
+
+function whatPage() {
+  const H = '../';
+  const courseCards = courses.map((c) => {
+    const chips = c.parts.flatMap((p) => p.series).map((s) => `<span class="chip">${esc(s.name.replace(/^[①-⑦]\s*/, ''))}</span>`).join('');
+    return `<a class="course" href="${H}roadmap/${c.id}/">
+      <div class="num" style="background:${c.color}">${c.no}</div>
+      <div><h4 style="color:${c.color}">${c.name}${c.sub ? ` <small>(${c.sub})</small>` : ''}<small>${c.count}권</small></h4>
+      <p>${esc(c.lead.split('.')[0])}.</p>
+      <div class="chips">${chips}</div>
+      <div class="go" style="color:${c.color};margin-top:10px">과정과 목차 보기 →</div></div></a>`;
+  }).join('\n');
+  return partPage(H, `무엇을 양육할 것인가 | ${VOL80}`, `분부하신 모든 것의 세 영역, 성장 청사진, 네 과정 79권의 양육 로드맵. 『${VOL80}』 제2부.`, '/what/', `
 <!-- ===================== 제2부 무엇을 ===================== -->
 <div class="parthead" id="what"><div class="wrap">
   <div class="q">무엇을</div>
@@ -426,7 +427,7 @@ function index() {
   <div class="eyebrow">8장 · 페이스빌더 성장 청사진</div>
   <h3 class="t">양육으로 지어져 가는 사람</h3>
   <p class="lead">양육의 목표는 그리스도와의 연합, 그리스도와의 동행, 그리스도의 형상이라는 세 단어로 정리됩니다. 그렇다면 그렇게 자라 가는 사람은 어떤 사람이 되며, 무엇을 위해 살아갈까요? 그 답을 교회론과 겹쳐 한 장의 그림으로 그린 것이 성장 청사진입니다.</p>
-  ${blueprint('')}
+  ${blueprint(H)}
   <div class="bridge">다시 말해, 성장 청사진은 교회의 세 얼굴이 성도 한 사람 안에서 이루어져 가는 모습입니다. 그리스도인은 부름받은 하나님의 백성의 한 사람이고, 제자와 증인은 교회가 훈련하고 보내는 그 사람의 모습입니다. 그렇다면 교회는 이 사람을 어떤 길로 세워 갈까요? 그 길이 양육 로드맵입니다.</div>
 </div></section>
 
@@ -439,14 +440,24 @@ function index() {
 
   <h4 id="where" style="font-size:21px;color:var(--navy);margin-top:40px;scroll-margin-top:80px">나는 지금 어디에 서 있나요?</h4>
   <div class="where">
-    <a href="roadmap/newcomer/"><b>처음 교회에 왔어요</b><span>새가족 과정 · 『복음 앞에 서다』부터</span></a>
-    <a href="roadmap/newcomer/"><b>다른 교회에서 옮겨 왔어요</b><span>새가족 과정 · 『복음 위에 서다』</span></a>
-    <a href="roadmap/basic/"><b>새가족 과정을 마쳤어요</b><span>기초 과정 · 기초양육 시리즈부터</span></a>
-    <a href="roadmap/intermediate/"><b>기초 과정을 마쳤어요</b><span>중급 과정 · 성경 시리즈부터</span></a>
-    <a href="roadmap/advanced/"><b>리더로 섬기고 싶어요</b><span>고급 과정 · 로마서 8장 시리즈부터</span></a>
+    <a href="${H}roadmap/newcomer/"><b>처음 교회에 왔어요</b><span>새가족 과정 · 『복음 앞에 서다』부터</span></a>
+    <a href="${H}roadmap/newcomer/"><b>다른 교회에서 옮겨 왔어요</b><span>새가족 과정 · 『복음 위에 서다』</span></a>
+    <a href="${H}roadmap/basic/"><b>새가족 과정을 마쳤어요</b><span>기초 과정 · 기초양육 시리즈부터</span></a>
+    <a href="${H}roadmap/intermediate/"><b>기초 과정을 마쳤어요</b><span>중급 과정 · 성경 시리즈부터</span></a>
+    <a href="${H}roadmap/advanced/"><b>리더로 섬기고 싶어요</b><span>고급 과정 · 로마서 8장 시리즈부터</span></a>
   </div>
 </div></section>
 
+` + `
+<section class="blk"><div class="wrap"><div class="pager" style="margin:0">
+  ${prevBtn(H + 'why/', '왜', '교회는 왜 양육해야 하는가')}
+  ${nextBtn(H + 'how/', '어떻게', '로드맵을 교회에 어떻게 적용할 것인가')}
+</div></div></section>`);
+}
+
+function howPage() {
+  const H = '../';
+  return partPage(H, `어떻게 적용할 것인가 | ${VOL80}`, `최소한의 양육 시스템, 세 종류의 평신도 지도자, 양육 모임을 이끄는 원리. 『${VOL80}』 제3부.`, '/how/', `
 <!-- ===================== 제3부 어떻게 ===================== -->
 <div class="parthead" id="how"><div class="wrap">
   <div class="q">어떻게</div>
@@ -509,9 +520,19 @@ function index() {
   <div class="loop"><span>부름받은 백성</span><i>→</i><span>그리스도의 제자</span><i>→</i><span>보냄받은 증인</span><i>→</i><span>새로운 한 사람</span><i>↺</i></div>
   <p>그리고 이 일은 거창한 시스템이 아니라 언제나 한 사람에게서 시작됩니다.</p>
   <a class="btn red" style="margin-top:18px" href="${PLAY80}" target="_blank" rel="noopener">『${VOL80}』 무료로 읽기</a>
-  <a class="btn line" href="vol080/">책 소개와 목차</a>
+  <a class="btn line" href="${H}vol080/">책 소개와 목차</a>
 </div></section>
 
+` + `
+<section class="blk"><div class="wrap"><div class="pager" style="margin:0">
+  ${prevBtn(H + 'what/', '무엇을', '무엇을, 어떤 순서로 양육할 것인가')}
+  ${nextBtn(H + 'about/', '저자', '송정헌 목사와 페이스빌더 출판사')}
+</div></div></section>`);
+}
+
+function aboutPage() {
+  const H = '../';
+  return partPage(H, `송정헌 목사 · 페이스빌더 출판사`, `송정헌 목사 소개, 설교, 문서 선교 후원, 교재 구입과 문의.`, '/about/', `
 <section class="blk" id="about"><div class="wrap">
   <div class="eyebrow">ABOUT</div>
   <h3 class="t">송정헌 목사</h3>
@@ -589,8 +610,39 @@ function index() {
       <p style="margin-top:4px;font-size:16px"><a href="mailto:sjhdavid@naver.com">sjhdavid@naver.com</a></p></div>
   </div>
 </div></section>
-` + footer + '\n</body></html>';
+`);
 }
+
+// ---------- 첫 화면(인트로) ----------
+function index() {
+  const H = './';
+  return head({
+    title: `${VOL80} | 송정헌 목사 · 페이스빌더 출판사`,
+    desc: `새 책 『${VOL80}』 — ${VOL80_SUB}. 페이스빌더 교재 ${TOTAL.books}권의 양육 로드맵과 성장 청사진. 구글 플레이 북스에서 무료로 읽으실 수 있습니다.`,
+    path: '/',
+  }) + `
+<main class="intro">
+  <div class="wrap">
+    <div class="who">송정헌 목사 · 페이스빌더 출판사</div>
+    <div class="in">
+      <div class="cover"><img src="/vol080-cover.jpg" alt="『${VOL80}』 표지" width="640" height="907"><div class="badge"><b>무료</b><small>FREE</small></div></div>
+      <div>
+        <div class="eyebrow">VOL.080 · 새 책</div>
+        <h1>페이스빌더 <br>양육 시스템 소개</h1>
+        <p class="sub">${VOL80_SUB}</p>
+        <div class="qs">
+          <a href="why/"><b>왜</b><span>교회는 왜 양육해야 하는가</span><i>→</i></a>
+          <a href="what/"><b>무엇을</b><span>무엇을, 어떤 순서로 양육할 것인가</span><i>→</i></a>
+          <a href="how/"><b>어떻게</b><span>로드맵을 교회에 어떻게 적용할 것인가</span><i>→</i></a>
+        </div>
+        <div class="mini"><a href="${PLAY80}" target="_blank" rel="noopener">구글 플레이 북스에서 무료로 읽기</a><a href="vol080/">책 소개와 목차</a><a href="about/">저자 소개 · 후원</a></div>
+      </div>
+    </div>
+  </div>
+</main>
+</body></html>`;
+}
+
 
 // ---------- 책 소개 페이지 ----------
 const TOC80 = [
@@ -626,7 +678,7 @@ function vol80Page() {
   const home = '../';
   const toc = TOC80.map(([pt, chs]) => `<div class="pt">${pt ? `<b>${esc(pt)}</b>` : ''}${chs.map(([n, t, subs]) =>
     subs.length ? `<details><summary><i>${n}</i>${esc(t)}</summary><ul>${subs.map((s) => `<li>${esc(s)}</li>`).join('')}</ul></details>`
-      : `<details><summary><i>${n}</i><a href="${home}#roadmap" style="text-decoration:none">${esc(t)}</a></summary></details>`).join('')}</div>`).join('');
+      : `<details><summary><i>${n}</i><a href="${home}what/#roadmap" style="text-decoration:none">${esc(t)}</a></summary></details>`).join('')}</div>`).join('');
   return head({
     title: `『${VOL80}』 — ${VOL80_SUB} | 페이스빌더 출판사`,
     desc: `VOL.080 『${VOL80}』 — ${VOL80_SUB}. 송정헌 지음. 구글 플레이 북스에서 무료로 읽으실 수 있습니다. 부록에 79권 교재의 책별 목차 수록.`,
@@ -640,7 +692,7 @@ function vol80Page() {
     <p class="sub">${VOL80_SUB}</p>
     <p class="lead">송정헌 지음 · 페이스빌더 출판사<br>부록 · 79권 교재의 책별 목차 수록</p>
     <a class="btn red" href="${PLAY80}" target="_blank" rel="noopener">구글 플레이 북스에서 무료로 읽기</a>
-    <a class="btn line" href="${home}#why">홈페이지에서 먼저 둘러보기</a>
+    <a class="btn line" href="${home}why/">홈페이지에서 먼저 둘러보기</a>
   </div>
 </div></div></section>
 
@@ -660,9 +712,9 @@ function vol80Page() {
   <div class="eyebrow">이 책의 구성</div>
   <h3 class="t">왜, 무엇을, 어떻게</h3>
   <div class="grid g3" style="margin-top:14px">
-    <a class="card" style="text-decoration:none" href="${home}#why"><div class="k">제1부 · 1–6장</div><h4>교회는 왜 양육해야 하는가</h4><p>세상에서 부름받은 하나님의 백성이자 세상으로 보냄받은 그리스도의 증인이라는 교회론, 그리고 성도 한 사람을 향한 하나님의 마음에서 그 이유를 찾습니다.</p></a>
-    <a class="card" style="text-decoration:none" href="${home}#what"><div class="k">제2부 · 7–14장</div><h4>무엇을, 어떤 순서로 양육할 것인가</h4><p>양육이 무엇인지 다시 정의하고, 성장 청사진을 그린 뒤, 만남·성장·재생산의 세 영역을 따라 짠 네 과정을 차례로 설명합니다.</p></a>
-    <a class="card" style="text-decoration:none" href="${home}#how"><div class="k">제3부 · 15–18장</div><h4>로드맵을 교회에 어떻게 적용할 것인가</h4><p>최소한의 양육 시스템과, 그것을 움직이는 사역리더·양육리더·소그룹리더를 세우는 길을 동료 목회자들에게 제안합니다.</p></a>
+    <a class="card" style="text-decoration:none" href="${home}why/"><div class="k">제1부 · 1–6장</div><h4>교회는 왜 양육해야 하는가</h4><p>세상에서 부름받은 하나님의 백성이자 세상으로 보냄받은 그리스도의 증인이라는 교회론, 그리고 성도 한 사람을 향한 하나님의 마음에서 그 이유를 찾습니다.</p></a>
+    <a class="card" style="text-decoration:none" href="${home}what/"><div class="k">제2부 · 7–14장</div><h4>무엇을, 어떤 순서로 양육할 것인가</h4><p>양육이 무엇인지 다시 정의하고, 성장 청사진을 그린 뒤, 만남·성장·재생산의 세 영역을 따라 짠 네 과정을 차례로 설명합니다.</p></a>
+    <a class="card" style="text-decoration:none" href="${home}how/"><div class="k">제3부 · 15–18장</div><h4>로드맵을 교회에 어떻게 적용할 것인가</h4><p>최소한의 양육 시스템과, 그것을 움직이는 사역리더·양육리더·소그룹리더를 세우는 길을 동료 목회자들에게 제안합니다.</p></a>
   </div>
   <h4 style="font-size:22px;color:var(--navy);margin-top:40px">목차 <span class="small">— 장 제목을 누르면 절 제목이 펼쳐집니다</span></h4>
   <div class="toc">${toc}</div>
@@ -678,7 +730,7 @@ function vol80Page() {
   </div>
   <div style="margin-top:30px;text-align:center">
     <a class="btn red" href="${PLAY80}" target="_blank" rel="noopener">구글 플레이 북스에서 무료로 읽기</a>
-    <a class="btn ghost" href="${home}#roadmap">79권 로드맵 보기</a>
+    <a class="btn ghost" href="${home}what/#roadmap">79권 로드맵 보기</a>
   </div>
 </div></section>
 ` + footer + '\n</body></html>';
@@ -705,7 +757,7 @@ function coursePage(c, i) {
     path: `/roadmap/${c.id}/`,
   }) + nav(home) + `
   <div class="chead" style="background:${c.color}"><div class="wrap">
-    <a class="crumb" href="${home}#roadmap">← 로드맵 전체 보기</a>
+    <a class="crumb" href="${home}what/#roadmap">← 로드맵 전체 보기</a>
     <div class="eyebrow" style="color:#f0dfb8;margin-top:18px">STAGE ${c.no} · ${esc(c.area)}</div>
     <h1>${c.name}${c.sub ? ` <span style="font-size:.6em">(${c.sub})</span>` : ''}</h1>
     <p>${esc(c.lead)}</p>
@@ -716,8 +768,8 @@ function coursePage(c, i) {
   ${c.note ? `<div class="note">${esc(c.note)}</div>` : ''}
   <div class="note" style="background:var(--navy);color:#fff;border:0">이 과정이 로드맵 전체에서 어떤 자리에 있는지는 『${VOL80}』 ${({ newcomer: '10장', basic: '11–12장', intermediate: '13장', advanced: '14장' })[c.id]}에서 자세히 설명합니다. <a href="${home}vol080/" style="color:var(--gold-l)">책 소개 보기 →</a></div>
   <div class="pager">
-    ${prev ? `<a href="../${prev.id}/">← ${prev.no}. ${prev.name}</a>` : `<a href="${home}#what">← 성장 청사진</a>`}
-    ${next ? `<a href="../${next.id}/">${next.no}. ${next.name} →</a>` : `<a href="${home}#how">어떻게 적용할 것인가 →</a>`}
+    ${prev ? `<a href="../${prev.id}/">← ${prev.no}. ${prev.name}</a>` : `<a href="${home}what/">← 성장 청사진</a>`}
+    ${next ? `<a href="../${next.id}/">${next.no}. ${next.name} →</a>` : `<a href="${home}how/">어떻게 적용할 것인가 →</a>`}
   </div>
 </main>
 <div style="height:40px"></div>
@@ -728,8 +780,7 @@ function write(rel, html) {
   const f = join(OUT, rel);
   mkdirSync(dirname(f), { recursive: true });
   if (PREVIEW) {
-    html = html.replace(/href="(roadmap\/\w+\/|\.\.\/\w+\/|\.\.\/\.\.\/|\.\.\/|\.\/|vol080\/|\.\.\/vol080\/|\.\.\/\.\.\/vol080\/)(#[\w-]+)?"/g, (m, a, h) => `href="${a === './' ? '' : a}index.html${h || ''}"`);
-    html = html.replace(/href="(\.\.\/)*roadmap\/(\w+)\/(#[\w-]+)"/g, (m, up, id, h) => `href="${up || ''}roadmap/${id}/index.html${h}"`);
+    html = html.replace(/href="((?:\.\.\/|\.\/)*(?:[\w-]+\/)*)(#[\w-]+)?"/g, (m, a, h) => /^(?:\.\.\/|\.\/)*(?:[\w-]+\/)*$/.test(a) && (a.endsWith('/') || a === '') && !(a === '' && h) ? `href="${a.replace(/^\.\/$/, '')}index.html${h || ''}"` : m);
     const depth = rel.split('/').length - 1;
     html = html.replace(/src="\/vol080-cover\.jpg"/g, `src="${'../'.repeat(depth)}vol080-cover.jpg"`);
   }
@@ -737,5 +788,6 @@ function write(rel, html) {
   console.log('wrote', f);
 }
 write('index.html', index());
+for (const [n, f] of [['why', whyPage], ['what', whatPage], ['how', howPage], ['about', aboutPage]]) write(PREVIEW ? `${n}/index.html` : `${n}.html`, f());
 write(PREVIEW ? 'vol080/index.html' : 'vol080.html', vol80Page());
 courses.forEach((c, i) => write(PREVIEW ? `roadmap/${c.id}/index.html` : `roadmap/${c.id}.html`, coursePage(c, i)));
